@@ -101,8 +101,8 @@ const Home = () => {
                 <div className="hero__content  ">
                   <h5 className="mb-3">Cách dễ dàng để đặt một đơn đặt hàng</h5>
                   <h1 className="mb-4 hero__title">
-                    <span>Thời trang</span> giới trẻ <br /> Luôn đồng hành
-                    <span> cùng bạn</span>
+                    <span>Thời trang</span> Giới trẻ<br /> food at
+                    <span> your door</span>
                   </h1>
 
                   <p>
@@ -190,7 +190,7 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center">
-                <h2>Giày bán chạy</h2>
+                <h2>Bánh phổ biến</h2>
               </Col>
 
               <Col lg="12">
@@ -208,7 +208,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("BURGER")}
                   >
-                    <img src={foodCategoryImg01} alt="" />Giày sneaker
+                    <img src={foodCategoryImg01} alt="" />Hamburger
                   </button>
 
                   <button
@@ -217,7 +217,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("PIZZA")}
                   >
-                    <img src={foodCategoryImg02} alt="" /> giày thể thao
+                    <img src={foodCategoryImg02} alt="" /> Pizza
                   </button>
 
                   <button
@@ -226,7 +226,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("BREAD")}
                   >
-                    <img  alt="" /> Giày Oxford
+                    <img src={foodCategoryImg03} alt="" /> Bánh mì
                   </button>
                 </div>
               </Col>
