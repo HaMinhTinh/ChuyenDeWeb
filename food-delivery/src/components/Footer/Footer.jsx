@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/logo.jpg";
 
 import "../../styles/footer.css";
 
@@ -27,7 +27,7 @@ const Footer = () => {
             <Col lg="3" md="4" sm="6">
               <div className=" footer__logo text-start">
                 <img src={logo} alt="logo" />
-                <h5>Tasty Cake</h5>
+                <h5>Sneaker</h5>
                 <p>
                   Giấy phép kinh doanh số : 0305301107 bởi Sở Kế Hoạch và Đầu Tư TP. Hồ Chí Minh
                 </p>
@@ -39,12 +39,12 @@ const Footer = () => {
               <ListGroup className="deliver__time-list">
                 <ListGroupItem className=" delivery__time-item border-0 ps-0">
                   <span>Thứ 2 - Thứ 7</span>
-                  <p>10:00am - 11:00pm</p>
+                  <p>08:00am - 21:00pm</p>
                 </ListGroupItem>
 
                 <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                  <span>Chủ nhật</span>
-                  <p>Ngày nghỉ</p>
+                  <span>Ngày nghỉ</span>
+                  <p>Chủ nhật</p>
                 </ListGroupItem>
               </ListGroup>
             </Col>
@@ -53,14 +53,14 @@ const Footer = () => {
               <h5 className="footer__title">Liên hệ</h5>
               <ListGroup className="deliver__time-list">
                 <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                  <p>Location: 22/4 Đông Hòa, Dĩ An, Bình Dương</p>
+                  <p>Location: Khu Phố 6, Linh Trung, Thủ Đức, Thành phố Hồ Chí Minh</p>
                 </ListGroupItem>
                 <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                  <span>Phone: 0346398280</span>
+                  <span>Phone: 0979294712</span>
                 </ListGroupItem>
 
                 <ListGroupItem className=" delivery__time-item border-0 ps-0">
-                  <span>Email: nhuttien5656@gmail.com</span>
+                  <span>Email: daihocnonglamnlu@gamil.com</span>
                 </ListGroupItem>
               </ListGroup>
             </Col>
@@ -80,7 +80,7 @@ const Footer = () => {
           <Row className="mt-5">
             <Col lg="6" md="6">
               <p className="copyright__text">
-                Copyright - 2022, website made by Muhibur Rahman.
+                © Bản quyền thuộc về NIKE.VN Thiet Ke Web Chuẩn SEO.
               </p>
             </Col>
             <Col lg="6" md="6">
