@@ -22,33 +22,29 @@ const TestimonialSlider = () => {
         <Slider {...settings}>
             <div>
                 <p className="review__text">
-                    "Giao hàng nhanh chóng
-                    Đóng gói chắc mà không làm móp méo
-                    Giá thành rẻ, hương vị tuổi thơ, không quá ngọt nhưng để tủ lạnh ăn ngon hơn nha"
+                    Đôi giày này được giao hàng nhanh chóng và được đóng gói cẩn thận. Chất lượng sản phẩm được đảm bảo với mức giá phải chăng. Thiết kế mang lại cảm giác trẻ trung mà không quá lòa loẹt, và đặc biệt thích hợp để mang đi du lịch ...
                 </p>
                 <div className=" slider__content d-flex align-items-center gap-3 ">
                     <img src={ava01} alt="avatar" className=" rounded" />
-                    <h6>Jhon Doe</h6>
+                    <h6>Tấn Đạt</h6>
                 </div>
             </div>
             <div>
                 <p className="review__text">
-                    "Đóng hàng cẩn thận, bánh không bị nát. Date còn siêu mới. Vị ngọt với hơi beo béo. Nói chung là ăn được.
-                    Nhưng mà kiểu không còn thấy giống cái vị hồi trước ăn nữa!"
+                    Tôi đã có trải nghiệm tốt về dịch vụ ở cửa hàng mình. Tuy nhiên, có một chút thay đổi trong kiểu dáng so với phiên bản trước, nhưng vẫn đáng để sở hữu.
                 </p>
                 <div className="slider__content d-flex align-items-center gap-3 ">
                     <img src={ava02} alt="avatar" className=" rounded" />
-                    <h6>Mitchell Marsh</h6>
+                    <h6>Vân Giang</h6>
                 </div>
             </div>
             <div>
                 <p className="review__text">
-                    "Bánh mềm thơm mùi bơ sữa ngon lắm, bóc được từng lớp. Mình thấy các bánh kiểu này ngon và
-                    rẻ hơn mấy bánh hottrend trên tiktok hot dc thời gian rồi chìm. Tặng shop ngàn sao luôn!"
+                    Đôi giày này cực kỳ êm và thơm mùi da tự nhiên, mở hộp ra mình cảm nhận được từng chi tiết. So với những mẫu giày theo xu hướng hot trên mạng xã hội, mình cảm thấy đôi này không chỉ đẹp và hấp dẫn hơn mà còn có giá cả phải chăng hơn nhiều. Chắc chắn sẽ ủng hộ cửa hàng lần sau! Đánh giá 5 sao.
                 </p>
                 <div className="slider__content d-flex align-items-center gap-3 ">
                     <img src={ava03} alt="avatar" className=" rounded" />
-                    <h6>Steven Crock</h6>
+                    <h6>Minh Quân</h6>
                 </div>
             </div>
         </Slider>
