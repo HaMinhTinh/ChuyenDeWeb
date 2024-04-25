@@ -13,7 +13,7 @@ import "../styles/product-details.css";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
 
-const FoodDetails = () => {
+const ProductsDetails = () => {
     const [tab, setTab] = useState("desc");
     const [enteredName, setEnteredName] = useState("");
     const [enteredEmail, setEnteredEmail] = useState("");
@@ -198,4 +198,4 @@ const FoodDetails = () => {
     );
 };
 
-export default FoodDetails;
+export default ProductsDetails;
