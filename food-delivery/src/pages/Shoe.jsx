@@ -8,7 +8,7 @@ import Helmet from "../components/Helmet/Helmet";
 import ReactPaginate from "react-paginate";
 import "../styles/pagination.css";
 
-const Pizzas = () => {
+const Shoe = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const searchedProduct = products;
@@ -27,14 +27,14 @@ const Pizzas = () => {
   };
 
   return (
-    <Helmet title="All Pizzas">
+    <Helmet title="All Shoe">
       <Container>
         <Row>
           {displayPage.map((item) => (
             <Col
               lg="3"
               md="4"
-              sm="6"
+              sm="5"
               xs="6"
               key={item.id}
               className="mb-4 mt-4"
@@ -57,4 +57,4 @@ const Pizzas = () => {
   );
 };
 
-export default Pizzas;
+export default Shoe;
