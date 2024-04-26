@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import heroImg from "../assets/images/hero.png";
+import heroImg from "../assets/images/phongnen.jpg";
 import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";
@@ -12,16 +12,15 @@ import Category from "../components/UI/category/Category.jsx";
 
 import "../styles/home.css";
 
-import featureImg01 from "../assets/images/service-01.png";
-import featureImg02 from "../assets/images/service-02.png";
-import featureImg03 from "../assets/images/service-03.png";
-import payment from "../assets/images/payment.png";
+import featureImg01 from "../assets/images/iconcamketchinhhang.png";
+import featureImg02 from "../assets/images/icongiaohanghoatoc.png";
+import featureImg03 from "../assets/images/iconhotro.png";
 
 import products from "../assets/fake-data/products.js";
 
-import foodCategoryImg01 from "../assets/images/hamburger.png";
-import foodCategoryImg02 from "../assets/images/pizza.png";
-import foodCategoryImg03 from "../assets/images/bread.png";
+import foodCategoryImg01 from "../assets/images/sneakerbanchay.png";
+import foodCategoryImg02 from "../assets/images/nikebanchay.png";
+import foodCategoryImg03 from "../assets/images/bootbanchay.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
@@ -33,20 +32,26 @@ import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
   {
-    title: "Giao hàng nhanh",
+    title: "CAM KẾT CHÍNH HÃNG",
     imgUrl: featureImg01,
-    desc: "Hóa đơn từ 300.000đ trở lên, miễn phí vận chuyển trong phạm vi 5km trong khung giờ 7h:00 - 15h:00",
+    desc: "100 % Authentic\n" +
+          "\n" +
+          "Cam kết sản phẩm chính hãng từ Châu Âu, Châu Mỹ...",
   },
 
   {
-    title: "Thanh toán",
-    imgUrl: payment,
-    desc: "Cung cấp nhiều hình thức thanh toán",
+    title: "GIAO HÀNG HỎA TỐC",
+    imgUrl: featureImg02,
+    desc: "Express delivery\n" +
+        "\n" +
+        "SHIP hỏa tốc 1h nhận hàng trong nội thành HCM",
   },
   {
-    title: "Đặt hàng dễ dàng",
+    title: "HỖ TRỢ 24/24",
     imgUrl: featureImg03,
-    desc: "Đặt hàng trực tiếp trên website hoặc gọi vào số hotline",
+    desc: "Supporting 24/24\n" +
+        "\n" +
+        "Gọi ngay 0909300746",
   },
 ];
 
@@ -99,14 +104,13 @@ const Home = () => {
             <Row>
               <Col lg="6" md="6">
                 <div className="hero__content  ">
-                  <h5 className="mb-3">Cách dễ dàng để đặt một đơn đặt hàng</h5>
                   <h1 className="mb-4 hero__title">
-                    <span>Thời trang</span> Giới trẻ<br /> food at
-                    <span> your door</span>
+                    <span>Thời trang</span> Giới trẻ<br /> Luôn đồng hành
+                    <span> cùng bạn</span>
                   </h1>
 
                   <p>
-                    Quý khách có thể đặt hàng trực tuyến ở website TastyCake
+                    Quý khách có thể đặt hàng trực tuyến ở website Sneaker
                   </p>
 
                   <div className="hero__btns d-flex align-items-center gap-5 mt-4">
@@ -131,7 +135,7 @@ const Home = () => {
                     <span className="shipping__icon">
                       <i class="ri-shield-check-line"></i>
                     </span>{" "}
-                      100% Thanh toán an toàn
+                      CAM KẾT CHÍNH HÃNG 100 %
                     </p>
                   </div>
                 </div>
@@ -154,11 +158,6 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center">
-                <h5 className="feature__subtitle mb-4">Những gì chúng tôi phục vụ</h5>
-                <h2 className="feature__title">Chỉ cần ngồi tại nhà</h2>
-                <h2 className="feature__title">
-                  chúng tôi sẽ <span>phục vụ</span>
-                </h2>
                 {/*<p className="mb-1 mt-4 feature__text">*/}
                 {/*  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,*/}
                 {/*  officiis?*/}
@@ -190,7 +189,7 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center">
-                <h2>Bánh phổ biến</h2>
+                <h2>Giày bán chạy</h2>
               </Col>
 
               <Col lg="12">
@@ -208,7 +207,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("BURGER")}
                   >
-                    <img src={foodCategoryImg01} alt="" />Hamburger
+                    <img src={foodCategoryImg01} alt="" />Sneaker
                   </button>
 
                   <button
@@ -217,7 +216,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("PIZZA")}
                   >
-                    <img src={foodCategoryImg02} alt="" /> Pizza
+                    <img src={foodCategoryImg02} alt="" /> Nike
                   </button>
 
                   <button
@@ -226,7 +225,7 @@ const Home = () => {
                       } `}
                       onClick={() => setCategory("BREAD")}
                   >
-                    <img src={foodCategoryImg03} alt="" /> Bánh mì
+                    <img src={foodCategoryImg03} alt="" /> Boot
                   </button>
                 </div>
               </Col>
@@ -250,22 +249,19 @@ const Home = () => {
               <Col lg="6" md="6">
                 <div className="why__tasty-treat">
                   <h2 className="tasty__treat-title mb-4">
-                    Tại sao chọn <span>Tasty Cake?</span>
+                    Tại sao chọn <span>Sneaker?</span>
                   </h2>
                   <p className="tasty__treat-desc">
-                    Đặt tiêu chí “Chất lượng” là ưu tiên hàng đầu, Savouré không ngừng cải tiến,
-                    phát triển và hoàn thiện bằng những hành động rõ ràng và cụ thể như – Cơ sở vật chất khang trang,
-                    nhà xưởng hiện đại và đạt tiêu chuẩn qua những chứng nhận có giá trị ISO – HACCP.
-                    Và trên hết, là sự công nhận tin yêu ngày càng lớn của Bạn đối với Savouré.
+                    Chọn Sneaker tại Savouré là lựa chọn hàng đầu với tiêu chí chất lượng được ưu tiên hàng đầu. Savouré không ngừng cải tiến, phát triển và hoàn thiện qua những hành động rõ ràng và cụ thể. Chúng tôi cam kết đảm bảo cơ sở vật chất khang trang, nhà xưởng hiện đại và đạt tiêu chuẩn cao qua những chứng nhận có giá trị như ISO - HACCP. Đặc biệt, sự công nhận và tin yêu ngày càng lớn từ phía khách hàng là động lực lớn nhất cho sự phát triển của Savouré. Hãy khám phá ngay và trải nghiệm sự hoàn hảo cùng Savouré!
                   </p>
 
                   <ListGroup className="mt-4">
                     <ListGroupItem className="border-0 ps-0">
                       <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                        <i class="ri-checkbox-circle-line"></i> An toàn thực phẩm
+                        <i class="ri-checkbox-circle-line"></i> Chất lượng sản phẩm
                       </p>
                       <p className="choose__us-desc">
-                        Luôn xem chất lượng sản sản phẩm & an toàn thực phẩm là mục tiêu hàng đầu của công ty
+                        Luôn xem chất lượng sản sản phẩm & trải nghiệm khách hàng là mục tiêu hàng đầu của công ty
                       </p>
                     </ListGroupItem>
 
@@ -283,7 +279,7 @@ const Home = () => {
                         <i class="ri-checkbox-circle-line"></i>Đặt hàng ở bất cứ đâu{" "}
                       </p>
                       <p className="choose__us-desc">
-                        Tasty Cake nhận ship đến tận nơi với các đơn hàng có giá trị từ 200.000VNĐ trở lên
+                        Sneaker nhận ship đến tận nơi với các đơn hàng có giá trị từ 200.000VNĐ trở lên
                       </p>
                     </ListGroupItem>
                   </ListGroup>
@@ -297,7 +293,7 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center mb-5 ">
-                <h2>Hot Pizza</h2>
+                <h2>Giày nữ hot trong tuần</h2>
               </Col>
 
               {hotPizza.map((item) => (
@@ -316,10 +312,10 @@ const Home = () => {
                 <div className="testimonial ">
                   <h5 className="testimonial__subtitle mb-4">Đánh giá</h5>
                   <h2 className="testimonial__title mb-4">
-                    <span>Khách hàng</span> nói gì về chúng tôi
+                    <span>Phản hồi</span> của khách hàng
                   </h2>
                   <p className="testimonial__desc">
-                    Cảm ơn bạn đã dành sự quan tâm và mua sản phẩm của Tasty Cake.
+                    Cảm ơn bạn đã dành sự quan tâm và mua sản phẩm của Sneaker.
                     Hãy chia sẻ những sản phẩm để bạn bè, gia đình và  người thân yêu cùng thưởng thức nhé ạ!
                   </p>
 

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/logo.jpg";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
@@ -12,7 +12,7 @@ const nav__links = [
     path: "/home",
   },
   {
-    display: "Bánh",
+    display: "Giày",
     path: "/foods",
   },
   {
@@ -63,7 +63,7 @@ const Header = () => {
               <Link to="/home">
                 <div className="logo">
                   <img src={logo} alt="logo" />
-                  <h5>Tasty Cake</h5>
+                  <h5>Sneaker</h5>
                 </div>
               </Link>
 
