@@ -27,7 +27,7 @@ const ExtraIngredients = {
   CORN: "Corn"
 }
 
-const PizzaDetails = () => {
+const SneakersDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const [extraIngredients, setExtraIngredients] = useState([]);
@@ -174,4 +174,4 @@ const PizzaDetails = () => {
   );
 };
 
-export default PizzaDetails;
+export default SneakersDetails;
