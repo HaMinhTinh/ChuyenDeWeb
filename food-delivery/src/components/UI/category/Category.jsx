@@ -2,30 +2,29 @@ import React from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
-import categoryImg01 from "../../../assets/images/category-01.png";
-import categoryImg02 from "../../../assets/images/category-02.png";
-import categoryImg03 from "../../../assets/images/category-03.png";
-import categoryImg04 from "../../../assets/images/category-04.png";
+import categoryImg01 from "../../../assets/images/iconsneaker1.jpg";
+import categoryImg02 from "../../../assets/images/iconnike1.jpg";
+import categoryImg03 from "../../../assets/images/iconoxford.jpg";
+import categoryImg04 from "../../../assets/images/iconboot.jpg";
 
 import "../../../styles/category.css";
 
 const categoryData = [
     {
-        display: "Hamburger",
+        display: "Sneaker",
         imgUrl: categoryImg01,
     },
     {
-        display: "Pizza",
+        display: "Nike",
         imgUrl: categoryImg02,
     },
-
     {
-        display: "Asian Food",
+        display: "Oxford",
         imgUrl: categoryImg03,
     },
 
     {
-        display: "Bánh mì",
+        display: "Boot",
         imgUrl: categoryImg04,
     },
 ];

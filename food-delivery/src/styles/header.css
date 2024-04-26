@@ -29,6 +29,9 @@ a {
 
 .logo {
   text-align: center;
+  width: 200px;
+  height: 110px;
+  transform: translateY(20px);
 }
 
 .logo:hover {
