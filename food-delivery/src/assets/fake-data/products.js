@@ -1,170 +1,172 @@
+
 // all images imported from images directory
-import product_01_image_01 from "../images/product_01.jpg";
-import product_01_image_02 from "../images/product_01.1.jpg";
-import product_01_image_03 from "../images/product_01.3.jpg";
+import product_01_image_01 from "../images/giay1.jpg";
+import product_01_image_02 from "../images/giay1_1.jpg";
+import product_01_image_03 from "../images/giay1_2.jpg";
 
-import product_02_image_01 from "../images/product_2.1.jpg";
-import product_02_image_02 from "../images/product_2.2.jpg";
-import product_02_image_03 from "../images/product_2.3.jpg";
+import product_02_image_01 from "../images/giay2.jpg";
+import product_02_image_02 from "../images/giay2_1.jpg";
+import product_02_image_03 from "../images/giay2_2.jpg";
 
-import product_03_image_01 from "../images/product_3.1.jpg";
-import product_03_image_02 from "../images/product_3.2.jpg";
-import product_03_image_03 from "../images/product_3.3.jpg";
+import product_03_image_01 from "../images/giay3.png";
+import product_03_image_02 from "../images/giay3_1.jpg";
+import product_03_image_03 from "../images/giay3_2.jpg";
 
-import product_04_image_01 from "../images/product_4.1.jpg";
-import product_04_image_02 from "../images/product_4.2.jpg";
-import product_04_image_03 from "../images/product_4.3.png";
+import product_04_image_01 from "../images/giay4.jpg";
+import product_04_image_02 from "../images/giay4_1.jpg";
+import product_04_image_03 from "../images/giay4_2.jpg";
 
-import product_05_image_01 from "../images/product_04.jpg";
-import product_05_image_02 from "../images/product_08.jpg";
-import product_05_image_03 from "../images/product_09.jpg";
+import product_05_image_01 from "../images/giay5.jpg";
+import product_05_image_02 from "../images/giay5_1.jpg";
+import product_05_image_03 from "../images/giay5_2.jpg";
 
-import product_06_image_01 from "../images/bread_thit.png";
-import product_06_image_02 from "../images/banh_mi_cha.png";
-import product_06_image_03 from "../images/bread_thit.png";
+import product_06_image_01 from "../images/giay6.jpg";
+import product_06_image_02 from "../images/giay6_1.jpg";
+import product_06_image_03 from "../images/giay6_2.jpg";
+
 
 const products = [
   {
     id: "01",
-    title: "Hamburger Gà",
-    price: 24.0,
+    title: "Adidas NMD R1 Grey",
+    price: 640000.0,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
-    category: "Burger",
+    category: "Adidas",
 
-    desc: "Bánh mì hamburger đùi gà lọc xương, xà lách, cà chua. Tương cà, tương ớt, mù tạc mật ong, Mayonnaise",
+    desc: "Phù hợp: nam nữ, đi học, đi làm, tập gym. Size: 36-44. Chất liệu: Vải dệt Primeknit. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng.",
   },
 
   {
     id: "02",
-    title: "Pizza Chay",
-    price: 115.0,
+    title: "Vans Style 36 “Marshmallow”",
+    price: 500000.0,
     image01: product_02_image_01,
     image02: product_02_image_02,
     image03: product_02_image_03,
-    category: "Pizza",
-    
-    desc: "Thanh Nhẹ Với Ô Liu Đen Tuyệt Hảo, Cà Chua Bi Tươi Ngon, Nấm, Thơm, Bắp, Hành Tây Và Phô Mai Mozzarella Cho Bạn Bữa Tiệc Rau Củ Tròn Vị",
+    category: "Vans",
+
+    desc: "Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Chất liệu: Canvas. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 
   {
     id: "03",
-    title: "Pizza Thập Cẩm",
-    price: 110.0,
+    title: "Giày New Balance Pro Court 'Beige Navy' [PROCTCCF]",
+    price: 450000.0,
     image01: product_03_image_01,
     image02: product_03_image_02,
     image03: product_03_image_03,
-    category: "Pizza",
-    
-    desc: "Thịt bò, thịt xông khói, pepperoni, thơm, ớt chuông, nấm, hành tây trên nền xốt cà chua, phô mai mozzarella",
+    category: "New Balance",
+
+    desc: "",
   },
 
   {
     id: "04",
-    title: "Pizza Thường",
-    price: 110.0,
+    title: "Balenciaga Triple S Trainer Grey",
+    price: 780000.0,
     image01: product_04_image_01,
     image02: product_04_image_02,
     image03: product_04_image_03,
-    category: "Pizza",
-    
-    desc: "Thơm Ngon Và Giàu Protein Với Thịt Xông Khói, Xúc Xích, ThịT Bò, Giăm Bông Và Pepperoni",
+    category: "Balenciaga",
+
+    desc: "Đế giày tăng chiều cao. Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Chất liệu: Da. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 
   {
     id: "05",
-    title: "Hamburger cá hồi",
-    price: 24.0,
+    title: "Air Force 1 Shadow Phantom",
+    price: 630000.0,
     image01: product_05_image_01,
     image02: product_05_image_02,
     image03: product_05_image_03,
-    category: "Burger",
+    category: "Nike",
 
-    desc: "Với hương vị độc đáo, ít tanh, cá hồi chính là một nguồn cung cấp Omega – 3, Vitamin B và chứa những chất dinh dưỡng đặc biệt như Kali giúp Bé yêu nhà mình thêm thông minh, khỏe mạnh. Ngoài ra còn giúp Ba giảm huyết áp, Selenium giúp giảm nguy cơ mắc bệnh ung thư và Astaxanthin chống oxy hóa nữa nè! ",
+    desc: "Phù hợp: Nữ, đi học, đi làm, hoạt động thể thao. Size: 36-39. Chất liệu: Da. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
   {
     id: "06",
-    title: "Hamburger cá ngừ",
-    price: 24.0,
+    title: "Converse Chuck 70 Low Top White",
+    price: 540000.0,
     image01: product_01_image_01,
     image02: product_01_image_02,
     image03: product_01_image_03,
-    category: "Burger",
+    category: "Converse",
 
-    desc: "Vị béo thơm đặc trưng của cá ngừ, vị thanh mát của xà lách, vị chua dịu của cà chua cộng thêm chút bùi béo của sốt đậm đà, còn có lớp phô mai mềm tan chảy,… Tất cả hài hòa tạo nên món burger cá ngừ cực hấp dẫn cho một bữa sáng tràn đầy năng lượng",
+    desc: "Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Chất liệu: Canvas. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 
   {
     id: "07",
-    title: "Pizza Hải Sản",
-    price: 115.0,
+    title: "Air Force 1 Shadow Spruce ",
+    price: 580000.0,
     image01: product_02_image_02,
     image02: product_02_image_01,
     image03: product_02_image_03,
-    category: "Pizza",
-    
-    desc: "Pizza Hải Sản Với Hải Sản (MựC, Thanh Cua) Nhân Đôi Cùng Với Thơm, Ớt Chuông Xanh, HàNh Tây, Phủ Phô Mai Mozzarella Từ New Zealand Trên Nền XốT Cheesy Mayo.",
+    category: "Nike",
+
+    desc: "",
   },
 
   {
     id: "08",
-    title: "Pizza Phô Mai",
-    price: 110.0,
+    title: "Nike Gives the Air Max 97 Ultra  Platinum Makeover",
+    price: 620000.0,
     image01: product_03_image_02,
     image02: product_03_image_01,
     image03: product_03_image_03,
-    category: "Pizza",
-    
-    desc: "Thưởng thức vị gà Karaage chiên giòn cắt lát trên nền pizza đậm vị, cùng nấm tươi, hành tây hoà quyện xốt phô mai",
+    category: "Nike",
+
+    desc: "Đế giày tăng chiều cao. Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 
   {
     id: "09",
-    title: "Pizza Gà Nướng Nấm",
-    price: 110.0,
+    title: "Adidas Prophere Grey Solar Red",
+    price: 750000.0,
     image01: product_04_image_02,
     image02: product_04_image_01,
     image03: product_04_image_03,
-    category: "Pizza",
-    
-    desc: "Pizza Gà Nướng Nấm Trong Cuộc Phiêu Lưu Vị Giác Với Thịt Gà, Nấm, Thơm, Cà Rốt Và Rau Mầm Phủ Xốt Tiêu Đen Thơm Nồng",
+    category: "Adidas",
+
+    desc: "",
   },
 
   {
     id: "10",
-    title: "Hamburger Bò",
-    price: 24.0,
+    title: "Nike Air Force 1 White Low",
+    price: 800000.0,
     image01: product_05_image_02,
     image02: product_05_image_01,
     image03: product_05_image_03,
-    category: "Burger",
+    category: "Nike",
 
-    desc: "Bò được chọn lọc kĩ càng ngay từ khâu đầu vào, thịt bò mềm được tẩm ướp bằng các nguyên liệu đảm bảo vệ sinh an toàn thực phẩm. Bò được chế biến cực ngon, thịt bên trong chín mềm. Độ ngon ngọt của thịt bò được giữ trọn trong từng thớ thịt.",
+    desc: "Thiết kế ấn tượng, tính năng thời trang All-In-One, công nghệ đế Air độc quyền, bảo hành lên đến 3 tháng ",
   },
 
   {
     id: "11",
-    title: "Bánh Mì Thịt",
-    price: 35.0,
+    title: "Vans Old Skool Classic Black",
+    price: 850000.0,
     image01: product_06_image_01,
     image02: product_06_image_02,
     image03: product_06_image_03,
-    category: "Bread",
+    category: "Vans",
 
-    desc: "Sản phẩm gồm thịt, bơ, chả, pate nóng. Đặc biệt, rau dưa sẽ được để riêng nên các khách hàng dễ dàng order, không sợ nhầm lẫn đơn hàng!",
+    desc: "Phù hợp: nam nữ, đi học, đi làm, hoạt động thể thao. Size: 36-44. Chất liệu: Canvas. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 
   {
-    id: "13",
-    title: "Bánh Mì Chả",
-    price: 35.0,
+    id: "12",
+    title: "Adidas Stan Smith Fairway",
+    price: 640000.0,
     image01: product_06_image_02,
     image02: product_06_image_01,
     image03: product_06_image_03,
-    category: "Bread",
+    category: "Adidas",
 
-    desc: "Thành phần nguyên liệu đều được chọn lọc từ những nhà cung cấp hàng đầu cả nước và được chứng nhận bởi cơ quan chức năng. Khâu sản xuất là dây chuyền khép kín trong môi trường tuyệt đối vô trùng, được xử lý bằng tia cực tím trước khi đóng gói nên đảm bảo tuyệt đối an toàn vệ sinh thực phẩm.",
+    desc: "Phù hợp: nam nữ, đi học, đi làm, tập gym. Size: 36-44. Êm chân, thoáng khí. Giao hàng toàn quốc. Bảo hành 3 tháng. Đổi trả dễ dàng. Streetwear, trẻ trung năng động.",
   },
 ];
 
