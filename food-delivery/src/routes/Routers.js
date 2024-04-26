@@ -7,8 +7,8 @@ import Checkout from "../pages/Checkout";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Contact from "../pages/Contact";
-import FoodDetails from "../pages/FoodDetails";
-import AllFoods from "../pages/AllFoods";
+import ProductsDetails from "../pages/ProductsDetails";
+import AllProducts from "../pages/AllProducts";
 import Account from "../pages/Account";
 import ReviewOrder from "../pages/ReviewOrder";
 const Routers = () => {
@@ -16,8 +16,8 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/foods" element={<AllFoods />} />
-      <Route path="/foods/:id" element={<FoodDetails />} />
+      <Route path="/foods" element={<AllProducts />} />
+      <Route path="/foods/:id" element={<ProductsDetails />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
       <Route path="/login" element={<Login />} />
