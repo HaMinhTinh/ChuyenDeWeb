@@ -42,7 +42,7 @@ const AllProducts = () => {
 
     return (
         <Helmet title="All-Foods">
-            <CommonSection title="Tất cả bánh" />
+            <CommonSection title="Tất cả giày" />
 
             <section>
                 <Container>
