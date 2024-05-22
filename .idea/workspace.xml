@@ -4,7 +4,36 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="" />
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconadidas1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconmlb2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconnewbalence.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/phong.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_6_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_6_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_6_2_4.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/repository/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconboot.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconoxford.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconsneaker1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/phongnen.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/category/Category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/category/Category.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Register.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,31 +42,99 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="2gYNI7TxhXgB4G4Lsm9AVvJwnVj" />
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ftYfyrVqllmZPTpFpiyK8ZplaB" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/ChuyenDeWeb/ChuyenDeWeb",
-    "spring.configuration.checksum": "a090d3e610372f3815a568d7b2f7dc38"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tinhh/OneDrive/Documents/CNPM/Project&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
   }
-}]]></component>
+}</component>
+  <component name="RunManager" selected="Spring Boot.BackendApplication">
+    <configuration name="ProductController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.demo.CDWeb.controller.ProductController" />
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.hcmuaf.demo.CDWeb.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.demo.CDWeb.services.ProductService" />
+      <module name="backend" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vn.edu.hcmuaf.demo.CDWeb.services.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <option name="ACTIVE_PROFILES" />
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="vn.edu.hcmuaf.demo.CDWeb.CdWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ProductService" />
+        <item itemvalue="Application.ProductController" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="" />
-      <created>1715870468379</created>
+      <created>1714621953932</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1715870468379</updated>
-      <workItem from="1715870469759" duration="25000" />
-      <workItem from="1715870772949" duration="117000" />
-      <workItem from="1715871220649" duration="24000" />
+      <updated>1714621953932</updated>
+      <workItem from="1714621956328" duration="35000" />
+      <workItem from="1716033962098" duration="1123000" />
+      <workItem from="1716121928434" duration="3419000" />
+      <workItem from="1716205402719" duration="2735000" />
+      <workItem from="1716216658315" duration="132000" />
+      <workItem from="1716219681798" duration="963000" />
+      <workItem from="1716259640191" duration="6953000" />
+      <workItem from="1716268897771" duration="1509000" />
+      <workItem from="1716386205693" duration="8575000" />
     </task>
     <servers />
   </component>

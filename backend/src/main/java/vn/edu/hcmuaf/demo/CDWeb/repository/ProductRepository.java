@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import vn.edu.hcmuaf.demo.CDWeb.services.ProductService;
 
 
 import java.util.List;
@@ -30,7 +31,6 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p")
     Page<Product> findAllProducts(Pageable pageable);
-
 
 
 

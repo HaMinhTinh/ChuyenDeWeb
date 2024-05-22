@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
 
-import heroImg from "../assets/images/phongnen.jpg";
+import heroImg from "../assets/images/phong.jpg";
 import "../styles/hero-section.css";
 
 import { Link } from "react-router-dom";

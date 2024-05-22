@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 
 import { Link } from "react-router-dom";
-import heroImg from "../assets/images/phongnen.jpg";
+import heroImg from "../assets/images/phong.jpg";
 
 const Register = () => {
 

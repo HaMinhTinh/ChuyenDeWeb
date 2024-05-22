@@ -2,16 +2,16 @@ import React from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
-import categoryImg01 from "../../../assets/images/iconsneaker1.jpg";
+import categoryImg01 from "../../../assets/images/iconnewbalence.jpg";
 import categoryImg02 from "../../../assets/images/iconnike1.jpg";
-import categoryImg03 from "../../../assets/images/iconoxford.jpg";
-import categoryImg04 from "../../../assets/images/iconboot.jpg";
+import categoryImg03 from "../../../assets/images/iconmlb2.webp";
+import categoryImg04 from "../../../assets/images/iconadidas1.jpg";
 
 import "../../../styles/category.css";
 
 const categoryData = [
     {
-        display: "Sneaker",
+        display: "New Balance",
         imgUrl: categoryImg01,
     },
     {
@@ -19,12 +19,12 @@ const categoryData = [
         imgUrl: categoryImg02,
     },
     {
-        display: "Oxford",
+        display: "MLB",
         imgUrl: categoryImg03,
     },
 
     {
-        display: "Boot",
+        display: "Adidas",
         imgUrl: categoryImg04,
     },
 ];
