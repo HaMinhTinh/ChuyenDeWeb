@@ -13,17 +13,18 @@ import java.util.List;
 @Service
 public class ProductService {
     @Autowired
-
-    private final ProductRepository productRepository;
+    private static ProductRepository productRepository;
 
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
+    public ProductService() {
+    }
 
     public List<Product> getAllProducts() {
-        return productRepository.findGetAll();
+        return productRepository.findAll(); // Assuming findAll() is implemented in your repository
     }
 
     public List<Product> getProductsByCategory(Long categoryId) {
@@ -48,4 +49,9 @@ public class ProductService {
         return productRepository.findAllProducts(pageable);
     }
 
+//    public static void main(String[] args) {
+////        ProductRepository repository;
+//        ProductService service = new ProductService();
+//        System.out.println(service.getAllProducts().size());
+//    }
 }

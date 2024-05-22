@@ -6,15 +6,19 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
+import vn.edu.hcmuaf.demo.CDWeb.repository.ProductRepository;
 import vn.edu.hcmuaf.demo.CDWeb.services.ProductService;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
+@CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
+
+
   @Autowired
-    private final ProductService productService;
+    private  ProductService productService;
 
     @Autowired
     public ProductController(ProductService productService) {
@@ -22,7 +26,6 @@ public class ProductController {
     }
 
     @GetMapping("/allProduct")
-
     public ResponseEntity<?> getAllProducts() {
         List<Product> productList = productService.getAllProducts();
         return ResponseEntity.ok(productList);
