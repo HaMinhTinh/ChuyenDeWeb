@@ -4,35 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconadidas1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconmlb2.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconnewbalence.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/phong.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_config_6_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_core_6_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_crypto_6_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_security_spring_security_web_6_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="load product và phân trang">
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/repository/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/repository/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconboot.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconoxford.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/iconsneaker1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/assets/images/phongnen.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/category/Category.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/category/Category.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/entity/Childs.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/entity/Childs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Register.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +19,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -58,24 +42,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tinhh/OneDrive/Documents/CNPM/Project&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/ChuyenDeWeb/ChuyenDeWeb/frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Spring Boot.BackendApplication">
     <configuration name="ProductController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="vn.edu.hcmuaf.demo.CDWeb.controller.ProductController" />
@@ -134,8 +119,17 @@
       <workItem from="1716219681798" duration="963000" />
       <workItem from="1716259640191" duration="6953000" />
       <workItem from="1716268897771" duration="1509000" />
-      <workItem from="1716386205693" duration="8575000" />
+      <workItem from="1716386205693" duration="8948000" />
+      <workItem from="1716467591829" duration="1714000" />
     </task>
+    <task id="LOCAL-00001" summary="load product và phân trang">
+      <created>1716397340163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716397340163</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,10 +140,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="minhtinh" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="load product và phân trang" />
+    <option name="LAST_COMMIT_MESSAGE" value="load product và phân trang" />
   </component>
 </project>

@@ -239,56 +239,6 @@ const Home = () => {
           </Container>
         </section>
 
-        <section className="why__choose-us">
-          <Container>
-            <Row>
-              <Col lg="6" md="6">
-                <img src={whyImg} alt="why-tasty-treat" className="w-100" />
-              </Col>
-
-              <Col lg="6" md="6">
-                <div className="why__tasty-treat">
-                  <h2 className="tasty__treat-title mb-4">
-                    Tại sao chọn <span>Sneaker?</span>
-                  </h2>
-                  <p className="tasty__treat-desc">
-                    Chọn Sneaker tại Savouré là lựa chọn hàng đầu với tiêu chí chất lượng được ưu tiên hàng đầu. Savouré không ngừng cải tiến, phát triển và hoàn thiện qua những hành động rõ ràng và cụ thể. Chúng tôi cam kết đảm bảo cơ sở vật chất khang trang, nhà xưởng hiện đại và đạt tiêu chuẩn cao qua những chứng nhận có giá trị như ISO - HACCP. Đặc biệt, sự công nhận và tin yêu ngày càng lớn từ phía khách hàng là động lực lớn nhất cho sự phát triển của Savouré. Hãy khám phá ngay và trải nghiệm sự hoàn hảo cùng Savouré!
-                  </p>
-
-                  <ListGroup className="mt-4">
-                    <ListGroupItem className="border-0 ps-0">
-                      <p className=" choose__us-title d-flex align-items-center gap-2 ">
-                        <i class="ri-checkbox-circle-line"></i> Chất lượng sản phẩm
-                      </p>
-                      <p className="choose__us-desc">
-                        Luôn xem chất lượng sản sản phẩm & trải nghiệm khách hàng là mục tiêu hàng đầu của công ty
-                      </p>
-                    </ListGroupItem>
-
-                    <ListGroupItem className="border-0 ps-0">
-                      <p className="choose__us-title d-flex align-items-center gap-2 ">
-                        <i class="ri-checkbox-circle-line"></i> Hỗ trợ
-                      </p>
-                      <p className="choose__us-desc">
-                        Cung cấp cho khách hàng sự trợ giúp trực tiếp ở bất cứ lúc nào mà khách hàng cần hỗ trợ.
-                      </p>
-                    </ListGroupItem>
-
-                    <ListGroupItem className="border-0 ps-0">
-                      <p className="choose__us-title d-flex align-items-center gap-2 ">
-                        <i class="ri-checkbox-circle-line"></i>Đặt hàng ở bất cứ đâu{" "}
-                      </p>
-                      <p className="choose__us-desc">
-                        Sneaker nhận ship đến tận nơi với các đơn hàng có giá trị từ 200.000VNĐ trở lên
-                      </p>
-                    </ListGroupItem>
-                  </ListGroup>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </section>
-
         <section className="pt-0">
           <Container>
             <Row>
@@ -301,31 +251,6 @@ const Home = () => {
                     <ProductCard item={item} />
                   </Col>
               ))}
-            </Row>
-          </Container>
-        </section>
-
-        <section>
-          <Container>
-            <Row>
-              <Col lg="6" md="6">
-                <div className="testimonial ">
-                  <h5 className="testimonial__subtitle mb-4">Đánh giá</h5>
-                  <h2 className="testimonial__title mb-4">
-                    <span>Phản hồi</span> của khách hàng
-                  </h2>
-                  <p className="testimonial__desc">
-                    Cảm ơn bạn đã dành sự quan tâm và mua sản phẩm của Sneaker.
-                    Hãy chia sẻ những sản phẩm để bạn bè, gia đình và  người thân yêu cùng thưởng thức nhé ạ!
-                  </p>
-
-                  <TestimonialSlider />
-                </div>
-              </Col>
-
-              <Col lg="6" md="6">
-                <img src={networkImg} alt="testimonial-img" className="w-100" />
-              </Col>
             </Row>
           </Container>
         </section>

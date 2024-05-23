@@ -15,7 +15,7 @@ public class Childs {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "product_category_id")
+    @JoinColumn(name = "product_id")
     private ProductCategory productCategory;
 
     // Constructors
