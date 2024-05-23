@@ -24,10 +24,6 @@ import foodCategoryImg03 from "../assets/images/bootbanchay.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
-import whyImg from "../assets/images/location.png";
-
-import networkImg from "../assets/images/network.png";
-
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
 
 const featureData = [
