@@ -10,13 +10,19 @@
     transform: translateY(-15px);
 }
 
+.category__img img {
+    width: 80px; /* Điều chỉnh kích thước ảnh theo ý muốn */
+    height: 80px; /* Điều chỉnh kích thước ảnh theo ý muốn */
+}
+
 @media only screen and (max-width: 768px) {
     .category__item {
         padding: 20px 15px;
     }
+
     .category__img img {
-        width: 40px;
-        height: 40px;
+        width: 200px; /* Điều chỉnh kích thước ảnh nhỏ hơn trên màn hình nhỏ */
+        height: 200px; /* Điều chỉnh kích thước ảnh nhỏ hơn trên màn hình nhỏ */
     }
 
     .category__item h6 {
