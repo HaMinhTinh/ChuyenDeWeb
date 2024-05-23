@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect, useCallback} from "react";
 
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
@@ -24,7 +24,11 @@ import foodCategoryImg03 from "../assets/images/bootbanchay.png";
 
 import ProductCard from "../components/UI/product-card/ProductCard.jsx";
 
+import "../styles/all-foods.css";
+import "../styles/pagination.css";
+
 import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
+import ReactPaginate from "react-paginate";
 
 const featureData = [
   {
@@ -53,9 +57,109 @@ const featureData = [
 
 const Home = () => {
   const [category, setCategory] = useState("ALL");
-  const [allProducts, setAllProducts] = useState(products);
-
   const [hotPizza, setHotPizza] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const [pageNumber, setPageNumber] = useState(0);
+  const [sortOption, setSortOption] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return function(...args) {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+      timeoutId = setTimeout(() => {
+        func.apply(null, args);
+      }, delay);
+    };
+  };
+
+  const debouncedFetchSuggestions = useCallback(
+      debounce(async (query) => {
+        try {
+          if (query.trim() === "") {
+            setSuggestions([]);
+            setShowSuggestions(false);
+            return;
+          }
+          const response = await fetch(`http://localhost:8080/api/suggestions?query=${query}`);
+          const data = await response.json();
+          setSuggestions(data);
+          setShowSuggestions(data.length > 0);
+        } catch (error) {
+          console.error("Lỗi khi lấy gợi ý:", error);
+        }
+      }, 300), []
+  );
+
+  useEffect(() => {
+    debouncedFetchSuggestions(searchTerm);
+    if (searchTerm === " ") {
+      setShowSuggestions(false);
+    }
+  }, [searchTerm, debouncedFetchSuggestions]);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/products/allProduct");
+        const data = await response.json();
+        setAllProducts(data);
+        setProducts(data);
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const productPerPage = 12;
+  const visitedPage = pageNumber * productPerPage;
+
+  const filteredProducts = products.filter((item) =>
+      item.name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSuggestionClick = (suggestion) => {
+    setSuggestions([]);
+    setSearchTerm(suggestion);
+    setShowSuggestions(false);
+
+  };
+
+  const sortedProducts = filteredProducts.sort((a, b) => {
+    switch (sortOption) {
+      case "name_asc":
+        return a.name.localeCompare(b.name);
+      case "name_desc":
+        return b.name.localeCompare(a.name);
+      case "price_asc":
+        return a.price - b.price;
+      case "price_desc":
+        return b.price - a.price;
+      default:
+        return 0;
+    }
+  });
+
+  const displayPage = sortedProducts.slice(
+      visitedPage,
+      visitedPage + productPerPage
+  );
+
+  const pageCount = Math.ceil(sortedProducts.length / productPerPage);
+
+  const changePage = ({ selected }) => {
+    setPageNumber(selected);
+  };
 
   useEffect(() => {
     const filteredPizza = products.filter((item) => item.category === "Pizza");
@@ -226,11 +330,20 @@ const Home = () => {
                 </div>
               </Col>
 
-              {allProducts.map((item) => (
+              {displayPage.map((item) => (
                   <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                     <ProductCard item={item} />
                   </Col>
               ))}
+              <div>
+                <ReactPaginate
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    previousLabel={"Trước"}
+                    nextLabel={"Tiếp"}
+                    containerClassName=" paginationBttns "
+                />
+              </div>
             </Row>
           </Container>
         </section>
@@ -238,9 +351,9 @@ const Home = () => {
         <section className="pt-0">
           <Container>
             <Row>
-              <Col lg="12" className="text-center mb-5 ">
-                <h2>Giày nữ hot trong tuần</h2>
-              </Col>
+              {/*<Col lg="12" className="text-center mb-5 ">*/}
+              {/*  <h2>Giày nữ hot trong tuần</h2>*/}
+              {/*</Col>*/}
 
               {hotPizza.map((item) => (
                   <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
