@@ -2,10 +2,10 @@ import React from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
-import categoryImg01 from "../../../assets/images/iconnewbalence.jpg";
-import categoryImg02 from "../../../assets/images/iconnike1.jpg";
+import categoryImg01 from "../../../assets/images/iconnewbalence1.jpg";
+import categoryImg02 from "../../../assets/images/iconnike.webp";
 import categoryImg03 from "../../../assets/images/iconmlb2.webp";
-import categoryImg04 from "../../../assets/images/iconadidas1.jpg";
+import categoryImg04 from "../../../assets/images/iconadidas.jpg";
 
 import "../../../styles/category.css";
 

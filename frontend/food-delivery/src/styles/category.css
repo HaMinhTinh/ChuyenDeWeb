@@ -11,8 +11,8 @@
 }
 
 .category__img img {
-    width: 80px; /* Điều chỉnh kích thước ảnh theo ý muốn */
-    height: 80px; /* Điều chỉnh kích thước ảnh theo ý muốn */
+    width: 150px; /* Điều chỉnh kích thước ảnh theo ý muốn */
+    height: 150px; /* Điều chỉnh kích thước ảnh theo ý muốn */
 }
 
 @media only screen and (max-width: 768px) {
