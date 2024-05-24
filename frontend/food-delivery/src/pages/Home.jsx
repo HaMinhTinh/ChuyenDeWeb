@@ -291,45 +291,6 @@ const Home = () => {
               <Col lg="12" className="text-center">
                 <h2>Giày bán chạy</h2>
               </Col>
-
-              <Col lg="12">
-                <div className="food__category d-flex align-items-center justify-content-center gap-4">
-                  <button
-                      className={`all__btn  ${
-                          category === "ALL" ? "foodBtnActive" : ""
-                      } `}
-                      onClick={() => setCategory("ALL")}
-                  > Tất cả
-                  </button>
-                  <button
-                      className={`d-flex align-items-center gap-2 ${
-                          category === "BURGER" ? "foodBtnActive" : ""
-                      } `}
-                      onClick={() => setCategory("BURGER")}
-                  >
-                    <img src={foodCategoryImg01} alt="" />Sneaker
-                  </button>
-
-                  <button
-                      className={`d-flex align-items-center gap-2 ${
-                          category === "PIZZA" ? "foodBtnActive" : ""
-                      } `}
-                      onClick={() => setCategory("PIZZA")}
-                  >
-                    <img src={foodCategoryImg02} alt="" /> Nike
-                  </button>
-
-                  <button
-                      className={`d-flex align-items-center gap-2 ${
-                          category === "BREAD" ? "foodBtnActive" : ""
-                      } `}
-                      onClick={() => setCategory("BREAD")}
-                  >
-                    <img src={foodCategoryImg03} alt="" /> Boot
-                  </button>
-                </div>
-              </Col>
-
               {displayPage.map((item) => (
                   <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
                     <ProductCard item={item} />
