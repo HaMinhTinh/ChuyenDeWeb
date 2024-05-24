@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="chỉnh lại web">
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="load san pham trang chu">
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/all-foods.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/all-foods.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/home.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/ChuyenDeWeb/ChuyenDeWeb/frontend",
+    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/sell-cake-master",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,7 +124,8 @@
       <workItem from="1716259640191" duration="6953000" />
       <workItem from="1716268897771" duration="1509000" />
       <workItem from="1716386205693" duration="8948000" />
-      <workItem from="1716467591829" duration="8366000" />
+      <workItem from="1716467591829" duration="11204000" />
+      <workItem from="1716556381341" duration="5318000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>
@@ -141,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716471921877</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="load san pham trang chu">
+      <created>1716478944620</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716478944620</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +188,7 @@
     <MESSAGE value="load product và phân trang" />
     <MESSAGE value="css lại image product" />
     <MESSAGE value="chỉnh lại web" />
-    <option name="LAST_COMMIT_MESSAGE" value="chỉnh lại web" />
+    <MESSAGE value="load san pham trang chu" />
+    <option name="LAST_COMMIT_MESSAGE" value="load san pham trang chu" />
   </component>
 </project>

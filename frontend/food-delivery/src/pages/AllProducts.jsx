@@ -2,20 +2,19 @@ import React, { useState, useEffect, useCallback } from "react";
 import Helmet from "../components/Helmet/Helmet";
 import CommonSection from "../components/UI/common-section/CommonSection";
 
-import { Container, Row, Col } from "reactstrap";
-
-// import products from "../assets/fake-data/products";
+import { Container, Row, Col, InputGroup } from "reactstrap";
 import ProductCard from "../components/UI/product-card/ProductCard";
 import ReactPaginate from "react-paginate";
 
 import "../styles/all-foods.css";
 import "../styles/pagination.css";
+import { FormControl } from "react-bootstrap";
 
 const AllProducts = () => {
     const [allProducts, setAllProducts] = useState([]);
     const [products, setProducts] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
-    
+
     const [pageNumber, setPageNumber] = useState(0);
     const [sortOption, setSortOption] = useState("");
     const [suggestions, setSuggestions] = useState([]);
@@ -23,7 +22,7 @@ const AllProducts = () => {
 
     const debounce = (func, delay) => {
         let timeoutId;
-        return function(...args) {
+        return function (...args) {
             if (timeoutId) {
                 clearTimeout(timeoutId);
             }
@@ -58,7 +57,6 @@ const AllProducts = () => {
         }
     }, [searchTerm, debouncedFetchSuggestions]);
 
-
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -86,7 +84,6 @@ const AllProducts = () => {
         setSuggestions([]);
         setSearchTerm(suggestion);
         setShowSuggestions(false);
-
     };
 
     const sortedProducts = filteredProducts.sort((a, b) => {
@@ -118,50 +115,63 @@ const AllProducts = () => {
     return (
         <Helmet title="All-Foods">
             <CommonSection title="Tất cả giày" />
-
             <section>
                 <Container>
                     <Row>
-                        <Col lg="6" md="6" sm="6" xs="12">
-                            <div className="search__widget d-flex align-items-center justify-content-between ">
-                                <input
-                                    type="text"
-                                    placeholder="I'm looking for...."
+                        <Col lg="9" className="offset-lg-3">
+                            <div className="search-container">
+                                <FormControl
+                                    placeholder="Tìm kiếm sản phẩm..."
                                     value={searchTerm}
                                     onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="search-input"
                                 />
-                                <span>
-                  <i class="ri-search-line"></i>
-                </span>
+                                <ul className="suggestion-list" style={{ display: showSuggestions ? 'block' : 'none' }}>
+                                    {suggestions.map((suggestion, index) => (
+                                        <li key={index} onClick={() => handleSuggestionClick(suggestion)}>{suggestion}</li>
+                                    ))}
+                                </ul>
                             </div>
                         </Col>
-                        <Col lg="6" md="6" sm="6" xs="12" className="mb-5">
-                            <div className="sorting__widget text-end">
-                                <select className="w-50">
-                                    <option>Mặc định</option>
-                                    <option value="ascending">Thứ tự, A-Z</option>
-                                    <option value="descending">Thứ tự, Z-A</option>
-                                    <option value="high-price">Giá cao</option>
-                                    <option value="low-price">Giá thấp</option>
-                                </select>
+                    </Row>
+                    <Row>
+                        <Col lg="3">
+                            <div className="filter-container">
+                                <InputGroup className="mb-3">
+                                    <FormControl
+                                        as="select"
+                                        value={sortOption}
+                                        onChange={(e) => setSortOption(e.target.value)}
+                                    >
+                                        <option value="">Sắp xếp theo...</option>
+                                        <option value="name_asc">Tên (A-Z)</option>
+                                        <option value="name_desc">Tên (Z-A)</option>
+                                        <option value="price_asc">Giá thấp đến cao</option>
+                                        <option value="price_desc">Giá cao đến thấp</option>
+                                    </FormControl>
+                                </InputGroup>
                             </div>
                         </Col>
-
-                        {displayPage.map((item) => (
-                            <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mb-4">
-                                <ProductCard item={item} />
-                            </Col>
-                        ))}
-
-                        <div>
-                            <ReactPaginate
-                                pageCount={pageCount}
-                                onPageChange={changePage}
-                                previousLabel={"Trước"}
-                                nextLabel={"Tiếp"}
-                                containerClassName=" paginationBttns "
-                            />
-                        </div>
+                        <Col lg="9">
+                            <Row>
+                                {displayPage.map((item) => (
+                                    <Col lg="4" md="4" sm="6" xs="12" key={item.id} className="mb-4">
+                                        <ProductCard item={item} />
+                                    </Col>
+                                ))}
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <ReactPaginate
+                                        pageCount={pageCount}
+                                        onPageChange={changePage}
+                                        previousLabel={"Trước"}
+                                        nextLabel={"Tiếp"}
+                                        containerClassName="paginationBttns"
+                                    />
+                                </Col>
+                            </Row>
+                        </Col>
                     </Row>
                 </Container>
             </section>
@@ -170,3 +180,4 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
+    
