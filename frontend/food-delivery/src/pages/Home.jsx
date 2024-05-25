@@ -1,44 +1,26 @@
-import React, {useState, useEffect, useCallback} from "react";
-
+import React, { useState, useEffect, useCallback } from "react";
 import Helmet from "../components/Helmet/Helmet.js";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-
-import heroImg from "../assets/images/phong.jpg";
-import "../styles/hero-section.css";
-
 import { Link } from "react-router-dom";
-
 import Category from "../components/UI/category/Category.jsx";
-
-import "../styles/home.css";
-
+import ProductCart from "../components/UI/product-card/ProductCard.jsx";
+import heroImg from "../assets/images/phong.jpg";
 import featureImg01 from "../assets/images/iconcamketchinhhang.png";
 import featureImg02 from "../assets/images/icongiaohanghoatoc.png";
 import featureImg03 from "../assets/images/iconhotro.png";
-
-import products from "../assets/fake-data/products.js";
-
-import foodCategoryImg01 from "../assets/images/sneakerbanchay.png";
-import foodCategoryImg02 from "../assets/images/nikebanchay.png";
-import foodCategoryImg03 from "../assets/images/bootbanchay.png";
-
-import ProductCard from "../components/UI/product-card/ProductCard.jsx";
-
+import "../styles/hero-section.css";
+import "../styles/home.css";
 import "../styles/all-foods.css";
 import "../styles/pagination.css";
-
-import TestimonialSlider from "../components/UI/slider/TestimonialSlider.jsx";
-import ReactPaginate from "react-paginate";
 
 const featureData = [
   {
     title: "CAM KẾT CHÍNH HÃNG",
     imgUrl: featureImg01,
     desc: "100 % Authentic\n" +
-          "\n" +
-          "Cam kết sản phẩm chính hãng từ Châu Âu, Châu Mỹ...",
+        "\n" +
+        "Cam kết sản phẩm chính hãng từ Châu Âu, Châu Mỹ...",
   },
-
   {
     title: "GIAO HÀNG HỎA TỐC",
     imgUrl: featureImg02,
@@ -56,146 +38,36 @@ const featureData = [
 ];
 
 const Home = () => {
-  const [category, setCategory] = useState("ALL");
-  const [hotPizza, setHotPizza] = useState([]);
-  const [allProducts, setAllProducts] = useState([]);
+  const [newProducts, setNewProducts] = useState([]);
+  const [discountedProducts, setDiscountedProducts] = useState([]);
   const [products, setProducts] = useState([]);
-  const [searchTerm, setSearchTerm] = useState("");
-
-  const [pageNumber, setPageNumber] = useState(0);
-  const [sortOption, setSortOption] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
-  const [showSuggestions, setShowSuggestions] = useState(false);
-
-  const debounce = (func, delay) => {
-    let timeoutId;
-    return function(...args) {
-      if (timeoutId) {
-        clearTimeout(timeoutId);
-      }
-      timeoutId = setTimeout(() => {
-        func.apply(null, args);
-      }, delay);
-    };
-  };
-
-  const debouncedFetchSuggestions = useCallback(
-      debounce(async (query) => {
-        try {
-          if (query.trim() === "") {
-            setSuggestions([]);
-            setShowSuggestions(false);
-            return;
-          }
-          const response = await fetch(`http://localhost:8080/api/suggestions?query=${query}`);
-          const data = await response.json();
-          setSuggestions(data);
-          setShowSuggestions(data.length > 0);
-        } catch (error) {
-          console.error("Lỗi khi lấy gợi ý:", error);
-        }
-      }, 300), []
-  );
 
   useEffect(() => {
-    debouncedFetchSuggestions(searchTerm);
-    if (searchTerm === " ") {
-      setShowSuggestions(false);
-    }
-  }, [searchTerm, debouncedFetchSuggestions]);
-
-
-  useEffect(() => {
-    const fetchData = async () => {
+    const fetchNewProducts = async () => {
       try {
-        const response = await fetch("http://localhost:8080/api/products/allProduct");
+        const response = await fetch("http://localhost:8080/api/products/productByStatus?status=new");
         const data = await response.json();
-        setAllProducts(data);
+        setNewProducts(data);
         setProducts(data);
-        console.log(data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching new products:", error);
       }
     };
 
-    fetchData();
+    const fetchDiscountedProducts = async () => {
+      try {
+        const response = await fetch("http://localhost:8080/api/products/productByDiscount?discount=1");
+        const data = await response.json();
+        setDiscountedProducts(data);
+        setProducts((prevProducts) => [...prevProducts, ...data]);
+      } catch (error) {
+        console.error("Error fetching discounted products:", error);
+      }
+    };
+
+    fetchNewProducts();
+    fetchDiscountedProducts();
   }, []);
-
-  const productPerPage = 12;
-  const visitedPage = pageNumber * productPerPage;
-
-  const filteredProducts = products.filter((item) =>
-      item.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  const handleSuggestionClick = (suggestion) => {
-    setSuggestions([]);
-    setSearchTerm(suggestion);
-    setShowSuggestions(false);
-
-  };
-
-  const sortedProducts = filteredProducts.sort((a, b) => {
-    switch (sortOption) {
-      case "name_asc":
-        return a.name.localeCompare(b.name);
-      case "name_desc":
-        return b.name.localeCompare(a.name);
-      case "price_asc":
-        return a.price - b.price;
-      case "price_desc":
-        return b.price - a.price;
-      default:
-        return 0;
-    }
-  });
-
-  const displayPage = sortedProducts.slice(
-      visitedPage,
-      visitedPage + productPerPage
-  );
-
-  const pageCount = Math.ceil(sortedProducts.length / productPerPage);
-
-  const changePage = ({ selected }) => {
-    setPageNumber(selected);
-  };
-
-  useEffect(() => {
-    const filteredPizza = products.filter((item) => item.category === "Pizza");
-    const slicePizza = filteredPizza.slice(0, 4);
-    setHotPizza(slicePizza);
-  }, []);
-
-  useEffect(() => {
-    if (category === "Tất cả") {
-      setAllProducts(products);
-    }
-
-    if (category === "Bánh Hamburger") {
-      const filteredProducts = products.filter(
-          (item) => item.category === "Burger"
-      );
-
-      setAllProducts(filteredProducts);
-    }
-
-    if (category === "PIZZA") {
-      const filteredProducts = products.filter(
-          (item) => item.category === "Pizza"
-      );
-
-      setAllProducts(filteredProducts);
-    }
-
-    if (category === "Bánh mì") {
-      const filteredProducts = products.filter(
-          (item) => item.category === "Bread"
-      );
-
-      setAllProducts(filteredProducts);
-    }
-  }, [category]);
 
   return (
       <Helmet title="Home">
@@ -258,14 +130,6 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center">
-                {/*<p className="mb-1 mt-4 feature__text">*/}
-                {/*  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor,*/}
-                {/*  officiis?*/}
-                {/*</p>*/}
-                {/*<p className="feature__text">*/}
-                {/*  Lorem ipsum dolor sit amet consectetur adipisicing elit.*/}
-                {/*  Aperiam, eius.{" "}*/}
-                {/*</p>*/}
               </Col>
 
               {featureData.map((item, index) => (
@@ -289,22 +153,13 @@ const Home = () => {
           <Container>
             <Row>
               <Col lg="12" className="text-center">
-                <h2>Giày bán chạy</h2>
+                <h2>Giày mới ra mắt</h2>
               </Col>
-              {displayPage.map((item) => (
+              {newProducts.map((item) => (
                   <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
-                    <ProductCard item={item} />
+                    <ProductCart item={item} />
                   </Col>
               ))}
-              <div>
-                <ReactPaginate
-                    pageCount={pageCount}
-                    onPageChange={changePage}
-                    previousLabel={"Trước"}
-                    nextLabel={"Tiếp"}
-                    containerClassName=" paginationBttns "
-                />
-              </div>
             </Row>
           </Container>
         </section>
@@ -312,13 +167,12 @@ const Home = () => {
         <section className="pt-0">
           <Container>
             <Row>
-              {/*<Col lg="12" className="text-center mb-5 ">*/}
-              {/*  <h2>Giày nữ hot trong tuần</h2>*/}
-              {/*</Col>*/}
-
-              {hotPizza.map((item) => (
-                  <Col lg="3" md="4" sm="6" xs="6" key={item.id}>
-                    <ProductCard item={item} />
+              <Col lg="12" className="text-center mb-5 ">
+                <h2>Giày giảm giá</h2>
+              </Col>
+              {discountedProducts.map((item) => (
+                  <Col lg="3" md="4" sm="6" xs="6" key={item.id} className="mt-5">
+                    <ProductCart item={item} />
                   </Col>
               ))}
             </Row>

@@ -28,6 +28,31 @@
     width: 300px;
 }
 
+.ads-container {
+    margin-top: 20px;
+}
+
+.ads-container h5 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.ad {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.ad-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+
 .suggestion-list {
     list-style-type: none;
     padding: 0;

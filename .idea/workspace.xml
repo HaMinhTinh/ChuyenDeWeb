@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="load san pham trang chu">
-      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="lọc sản phẩm và lọc theo danh mục">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Home.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/all-foods.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/all-foods.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/category.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +51,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/sell-cake-master",
+    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/ChuyenDeWeb/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -125,7 +123,10 @@
       <workItem from="1716268897771" duration="1509000" />
       <workItem from="1716386205693" duration="8948000" />
       <workItem from="1716467591829" duration="11204000" />
-      <workItem from="1716556381341" duration="5318000" />
+      <workItem from="1716556381341" duration="6489000" />
+      <workItem from="1716566028656" duration="4522000" />
+      <workItem from="1716616093173" duration="10941000" />
+      <workItem from="1716643685097" duration="5355000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>
@@ -155,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716478944620</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="lọc sản phẩm và lọc theo danh mục">
+      <created>1716561940207</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716561940207</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -189,6 +197,7 @@
     <MESSAGE value="css lại image product" />
     <MESSAGE value="chỉnh lại web" />
     <MESSAGE value="load san pham trang chu" />
-    <option name="LAST_COMMIT_MESSAGE" value="load san pham trang chu" />
+    <MESSAGE value="lọc sản phẩm và lọc theo danh mục" />
+    <option name="LAST_COMMIT_MESSAGE" value="lọc sản phẩm và lọc theo danh mục" />
   </component>
 </project>
