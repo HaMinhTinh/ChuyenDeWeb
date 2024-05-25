@@ -151,6 +151,21 @@ const AllProducts = () => {
                                     </FormControl>
                                 </InputGroup>
                             </div>
+                            <div className="ads-container">
+                                <h5>Sự kiện hot trong ngày</h5>
+                                <div className="ad">
+                                    <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/07/sneakercon-conventionctr-1-scaled.jpg.webp" alt="Ad 1" className="ad-image" />
+                                    <p>Lễ hội giày trên toàn thế giới</p>
+                                </div>
+                                <div className="ad">
+                                    <img src="https://dms.gov.vn/documents/53598/0/z5221766059537_c6047d5fff1ef38ff9df96b3be7f5594.jpg/a9fd2fcb-5f5a-4b24-9d4d-f73c0542293e" alt="Ad 2" className="ad-image" />
+                                    <p>Cơ quan chức năng ập vào kiểm tra lô hàng giày không rõ nguồn gốc</p>
+                                </div>
+                                <div className="ad">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknG6NPDzAXX-GADM4Idb2Vb3p6MHZRbHRkq-46RIgaQ&s" alt="Ad 3" className="ad-image" />
+                                    <p>Cơ sở sản xuất giày uy tin chất lượng</p>
+                                </div>
+                            </div>
                         </Col>
                         <Col lg="9">
                             <Row>
