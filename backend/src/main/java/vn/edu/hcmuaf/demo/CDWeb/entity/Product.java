@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "products")
@@ -53,6 +54,12 @@ public class Product {
         this.description = description;
         this.category = category;
         this.createdAt = createdAt;
+    }
+
+    public Product(String name, String description, double price, List<String> imageUrls) {
+    }
+
+    public Product(Long id, String name, String imageUrl, BigDecimal price, String status, Integer discount, String description, String category, Timestamp createdAt) {
     }
 
     public Long getId() {
