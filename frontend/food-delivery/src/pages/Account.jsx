@@ -1,105 +1,130 @@
-import React, {useEffect, useRef} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/account.css';
 
+const Account = ({ user = null }) => {
+    const userInfo = JSON.parse(sessionStorage.getItem("userInfo")) || {};
 
-const Account = () => {
+    const [formData, setFormData] = useState({
+        username: userInfo.username || "",
+        firstName: userInfo.first_name || "",
+        lastName: userInfo.last_name || "",
+        phone: userInfo.phone || "",
+        address: userInfo.address || "",
+    });
+
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const [currentAlert, setCurrentAlert] = useState("");
+
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            handleSubmit();
+        }
+    };
+
+    const handleSubmit = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/api/accountUpdate", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                const updatedUserInfo = await response.json();
+                setSuccess("Thông tin đã được cập nhật");
+                setCurrentAlert("success");
+                setFormData({
+                    ...formData,
+                    username: updatedUserInfo.username,
+                    firstName: updatedUserInfo.first_name,
+                    lastName: updatedUserInfo.last_name,
+                    phone: updatedUserInfo.phone,
+                    address: updatedUserInfo.address,
+                });
+            } else {
+                const errorMessage = await response.text();
+                setError(errorMessage);
+                setCurrentAlert("error");
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFormData({
+            ...formData,
+            [name]: value,
+        });
+    };
+
+    const handleLogout = () => {
+        // Xóa sessionStorage khi người dùng đăng xuất
+        sessionStorage.removeItem("userInfo");
+        // Chuyển hướng người dùng đến trang đăng nhập hoặc trang chính
+        window.location.href = "/home"; // Thay đổi đường dẫn tùy theo yêu cầu của bạn
+    };
+
     return (
         <div id="content">
             <div className="wrapper">
                 <div className="form_ctrl">
                     <div className="acc_ctrl m_r12">
-                        <h2>
-                            Tài khoản</h2>
+                        <h2>Tài khoản</h2>
                         <div className="list_ctrl">
                             <ul>
                                 <li className="first active">
-                                    <a id="account" title="Thông tin tài khoản"
-                                       href="${pageContext.request.contextPath}/account?action=account">Thông tin tài
-                                        khoản</a></li>
-                                <li className="first">
-                                    <a id="changePassword" title="Đổi mật khẩu"
-                                       href="${pageContext.request.contextPath}/account?action=changePassword">Đổi
-                                        mật khẩu</a></li>
-                                <li className="first">
-                                    <a id="reviewOrders" title="Xem lại đơn hàng"
-                                       // href="${pageContext.request.contextPath}/account?action=reviewOrders">
-                                        href="/reviewOrder">
-                                        Xem lại đơn hàng</a></li>
-                                <li className="first">
-                                    <a id="changePrivateKey" title="Đổi Private Key"
-                                       href="${pageContext.request.contextPath}/account?action=changePrivateKey">Đổi
-                                        Private Key</a>
+                                    <a id="account" title="Thông tin tài khoản" href="/account">Thông tin tài khoản</a>
                                 </li>
                                 <li className="first">
-                                    <a id="logout" title="Đăng xuất"
-                                       href="${pageContext.request.contextPath}/logout?action=logout">Đăng xuất</a>
+                                    <a id="changePassword" title="Đổi mật khẩu" href="/changePassword">Đổi mật khẩu</a>
+                                </li>
+                                <li className="first">
+                                    <a id="reviewOrders" title="Xem lại đơn hàng" href="/reviewOrder">Xem lại đơn hàng</a>
+                                </li>
+                                <li className="first">
+                                    <a onClick={handleLogout} id="logout" title="Đăng xuất" href="/home">Đăng xuất</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div className="col_1_1">
-                        <div id="login" className="frm_content"
-                             onKeyPress="javascript:return WebForm_FireDefaultButton(event, 'acc_save')">
-                            <h2>
-                                Cập nhật thông tin tài khoản
-                            </h2>
-                            <form id="form">
+                        <div id="login" className="frm_content">
+                            <h2>Cập nhật thông tin tài khoản</h2>
+                            <form id="form" onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
                                 <div className="input ">
-                                    <label>
-                                        <span className="req">*</span>Email của bạn:
-                                    </label>
-                                    {/*<input name="email" type="text" value="${cus.email}" maxLength="150" id="acc_email" />*/}
-                                    <input name="email" type="text" value="" maxLength="150" id="acc_email" />
-                                    <small>error</small>
+                                    <label><span className="req">*</span>Tên đăng nhập:</label>
+                                    <input name="username" type="text" value={formData.username} onChange={handleChange} onKeyPress={handleKeyPress} maxLength="150" id="acc_email" />
+                                    <small>{error}</small>
                                 </div>
                                 <div className="input ">
-                                    <label htmlFor="acc_fname">
-                                        <span className="req">*</span>Họ:</label>
-                                    <input name="fname" type="text" value="" maxLength="150"
-                                           id="acc_fname" />
-                                        <small>error</small>
+                                    <label htmlFor="acc_fname"><span className="req">*</span>Họ:</label>
+                                    <input name="firstName" type="text" value={formData.firstName} onChange={handleChange} onKeyPress={handleKeyPress} maxLength="150" id="acc_fname" />
+                                    <small>{error}</small>
                                 </div>
                                 <div className="input ">
-                                    <label htmlFor="acc_lname">
-                                        <span className="req">*</span>Tên:</label>
-                                    <input name="lname" type="text" value="" maxLength="150"
-                                           id="acc_lname" />
-                                        <small>error</small>
+                                    <label htmlFor="acc_lname"><span className="req">*</span>Tên:</label>
+                                    <input name="lastName" type="text" value={formData.lastName} onChange={handleChange} onKeyPress={handleKeyPress} maxLength="150" id="acc_lname" />
+                                    <small>{error}</small>
                                 </div>
                                 <div className="input ">
-                                    <label htmlFor="acc_phoneNumber">
-                                        <span className="req">*</span>Điện thoại:</label>
-                                    <input name="phoneNumber" type="tel" id="acc_phoneNumber" value="" />
-                                        <small>error</small>
+                                    <label htmlFor="acc_phoneNumber"><span className="req">*</span>Điện thoại:</label>
+                                    <input name="phone" type="tel" value={formData.phone} onChange={handleChange} onKeyPress={handleKeyPress} id="acc_phoneNumber" />
+                                    <small>{error}</small>
                                 </div>
-                                <div>
-                                    <label htmlFor="acc_address">
-                                        Địa chỉ:</label>
-                                    <input name="address" type="text" maxLength="250" id="acc_address"
-                                           value="" />
+                                <div className="input">
+                                    <label htmlFor="acc_address"><span className="req">*</span>Địa chỉ:</label>
+                                    <input name="address" type="text" value={formData.address} onChange={handleChange} onKeyPress={handleKeyPress} maxLength="250" id="acc_address" />
                                 </div>
-                                <div>
-                                    <label>
-                                        Tỉnh/Thành phố:</label>
-                                    <select className="form-select form-select-sm" id="city"
-                                            aria-label=".form-select-sm">
-                                        <option value="" selected>Chọn tỉnh thành</option>
-                                    </select>
-                                    <label>
-                                        Quận/Huyện:</label>
-                                    <select className="form-select form-select-sm" id="district"
-                                            aria-label=".form-select-sm">
-                                        <option value="" selected>Chọn quận huyện</option>
-                                    </select>
-                                    <label>
-                                        Phường/Xã:</label>
-                                    <select className="form-select form-select-sm" id="ward"
-                                            aria-label=".form-select-sm">
-                                        <option value="" selected>Chọn phường xã</option>
-                                    </select>
-                                </div>
-                                <button className="button">Lưu</button>
+                                {currentAlert === "error" && error && <div className="alert alert-danger">{error}</div>}
+                                {currentAlert === "success" && success && <div className="alert alert-success">{success}</div>}
+                                <button className="button" type="submit">Lưu</button>
                             </form>
                         </div>
                     </div>
@@ -108,4 +133,11 @@ const Account = () => {
         </div>
     );
 };
+
+const App = () => {
+    const user = { username: 'JohnDoe' }; // Replace with actual user data
+
+    return <Account user={user} />;
+};
+
 export default Account;
