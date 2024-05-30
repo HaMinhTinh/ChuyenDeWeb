@@ -2,23 +2,13 @@
   width: 100%;
   height: 100px;
   line-height: 100px;
-  top: 0;
-}
-a {
-  textDecoration: "none";
-}
-@keyframes animation {
-  from {
-    top: -100px;
-  }
-  to {
-    top: 0px;
-  }
+  top: -25px; /* Giảm khoảng cách từ trên xuống */
+  position: relative; /* Đảm bảo header không bị ảnh hưởng bởi các thành phần khác */
 }
 
 .header__shrink {
   position: sticky;
-  top: 0;
+  top: 10px; /* Thêm khoảng trống phía trên khi header được thu nhỏ */
   left: 0;
   background: #fff;
   z-index: 99999;
