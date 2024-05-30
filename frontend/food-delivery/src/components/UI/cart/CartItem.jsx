@@ -7,53 +7,45 @@ import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
 const CartItem = ({ item }) => {
-  const { id, title, price, image01, quantity, totalPrice } = item;
-
+  const { id, name, imageUrl, price, quantity } = item;
   const dispatch = useDispatch();
 
-  const incrementItem = () => {
-    dispatch(
-        cartActions.addItem({
-          id,
-          title,
-          price,
-          image01,
-        })
-    );
+  const increaseQuantity = () => {
+    dispatch(cartActions.addItem(item));
   };
 
-  const decreaseItem = () => {
+  const decreaseQuantity = () => {
     dispatch(cartActions.removeItem(id));
   };
 
-  const deleteItem = () => {
-    dispatch(cartActions.deleteItem(id));
+  const removeItem = () => {
+    dispatch(cartActions.removeItem(id));
   };
 
   return (
       <ListGroupItem className="border-0 cart__item">
         <div className="cart__item-info d-flex gap-2">
-          <img src={image01} alt="product-img" />
+          <img src={imageUrl} alt={imageUrl} style={{width: '100px', height: '100px', objectFit: 'cover'}}/>
 
           <div className="cart__product-info w-100 d-flex align-items-center gap-4 justify-content-between">
             <div>
-              <h6 className="cart__product-title">{title}</h6>
-              <p className=" d-flex align-items-center gap-5 cart__product-price">
-                {quantity}x <span>${totalPrice}</span>
+              <h6 className="cart__product-title">{name}</h6>
+              <p className="d-flex align-items-center gap-5 cart__product-price">
+                {quantity}x <span>{(price * quantity).toFixed(2)}</span>
               </p>
-              <div className=" d-flex align-items-center justify-content-between increase__decrease-btn">
-              <span className="increase__btn" onClick={incrementItem}>
-                <i class="ri-add-line"></i>
+              <div className="d-flex align-items-center justify-content-between increase__decrease-btn">
+              <span className="increase__btn" onClick={increaseQuantity}>
+                <i className="ri-add-line"></i>
               </span>
                 <span className="quantity">{quantity}</span>
-                <span className="decrease__btn" onClick={decreaseItem}>
-                <i class="ri-subtract-line"></i>
+                <span className="decrease__btn" onClick={decreaseQuantity}>
+                <i className="ri-subtract-line"></i>
               </span>
               </div>
             </div>
 
-            <span className="delete__btn" onClick={deleteItem}>
-            <i class="ri-close-line"></i>
+            <span className="delete__btn" onClick={removeItem}>
+            <i className="ri-close-line"></i>
           </span>
           </div>
         </div>

@@ -1,20 +1,21 @@
 body {
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #e0eafc, #cfdef3);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     margin: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 .form-signin {
     width: 100%;
-    max-width: 360px;
-    padding: 30px;
+    max-width: 400px;
+    padding: 40px;
     margin: auto;
     background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -27,18 +28,18 @@ body {
     position: relative;
     box-sizing: border-box;
     height: auto;
-    padding: 10px;
-    font-size: 16px;
-    margin-bottom: 15px;
-    border: 1px solid #ced4da;
-    border-radius: 5px;
+    padding: 15px;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
     transition: all 0.3s ease;
 }
 
 .form-signin .form-control:focus {
     z-index: 2;
-    border-color: #80bdff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.25);
+    border-color: #6200ea;
+    box-shadow: 0 0 10px rgba(98, 0, 234, 0.2);
 }
 
 .form-signin input[type="email"] {
@@ -53,17 +54,31 @@ body {
 
 .form-signin button {
     width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
+    padding: 15px;
+    font-size: 1rem;
+    color: #ffffff;
+    background-color: #6200ea;
     border: none;
-    border-radius: 5px;
+    border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .form-signin button:hover {
-    background-color: #0056b3;
-    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+    background-color: #4500b5;
+    box-shadow: 0 0 20px rgba(98, 0, 234, 0.4);
+}
+
+.form-signin .footer-text {
+    margin-top: 20px;
+    color: #555;
+}
+
+.form-signin .footer-text a {
+    color: #6200ea;
+    text-decoration: none;
+}
+
+.form-signin .footer-text a:hover {
+    text-decoration: underline;
 }

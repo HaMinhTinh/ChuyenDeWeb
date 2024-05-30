@@ -9,6 +9,7 @@ import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
 import vn.edu.hcmuaf.demo.CDWeb.repository.ProductRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -49,9 +50,8 @@ public class ProductService {
         return productRepository.findAllProducts(pageable);
     }
 
-//    public static void main(String[] args) {
-////        ProductRepository repository;
-//        ProductService service = new ProductService();
-//        System.out.println(service.getAllProducts().size());
-//    }
+    public Product getProductById(long id) {
+        Optional<Product> productOptional = productRepository.findById(id);
+        return productOptional.orElse(null);
+    }
 }

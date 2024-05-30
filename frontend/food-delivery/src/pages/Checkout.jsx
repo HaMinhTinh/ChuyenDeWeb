@@ -141,7 +141,7 @@ const Checkout = () => {
                       <span>{item.name}</span>
                     </div>
                     <div>
-                      <span className="badge bg-primary rounded-pill me-2">Price: ${item.price}</span>
+                      <span className="badge bg-primary rounded-pill me-2">Price: {item.price}</span>
                       <br/>
                       <span className="badge bg-secondary rounded-pill me-2">Quantity: {item.quantity}</span>
                     </div>
@@ -149,7 +149,7 @@ const Checkout = () => {
               ))}
               <li className="list-group-item d-flex justify-content-between align-items-center">
                 <span>Total Price Food:</span>
-                <span>${totalPrice.toFixed(2)}</span>
+                <span>{totalPrice.toFixed(2)}</span>
               </li>
             </ul>
 
@@ -178,7 +178,7 @@ const Checkout = () => {
             </form>
           </div>
           <div className="col-md-8 order-md-1">
-            <h4 className="mb-3">Billing address</h4>
+            <h4 className="mb-3">Bắt đầu giao dịch</h4>
             <form className="needs-validation">
               <div className="cart-section-right">
                 <h2 className="main-h2">Thông tin Giao hàng</h2>
@@ -267,7 +267,7 @@ const Checkout = () => {
                 <label className="custom-control-label" htmlFor="save-info">Lưu địa chỉ giao hàng</label>
               </div>
               <hr className="mb-4" />
-              <h4 className="mb-3">Hình thức thanh toán</h4>
+              <h4 className="mb-3">Chọn hình thức thanh toán</h4>
               <div className="d-block my-3">
                 <div className="custom-control custom-radio">
                   <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" value="direct" checked={paymentMethod === 'direct'} onChange={handlePaymentMethodChange} required />

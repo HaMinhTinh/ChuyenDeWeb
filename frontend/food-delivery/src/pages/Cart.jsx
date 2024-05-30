@@ -103,7 +103,7 @@ const Tr = ({ item, increaseQuantity, decreaseQuantity }) => {
                 <img src={imageUrl} alt="" />
             </td>
             <td className="text-center">{name}</td>
-            <td className="text-center">${price}</td>
+            <td className="text-center">{price}</td>
             <td className="text-center">
                 <div className="d-flex align-items-center justify-content-center">
                     <button className="btn btn-sm btn-secondary" onClick={() => decreaseQuantity(id)}>-</button>

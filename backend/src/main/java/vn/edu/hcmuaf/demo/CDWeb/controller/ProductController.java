@@ -3,12 +3,15 @@ package vn.edu.hcmuaf.demo.CDWeb.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import vn.edu.hcmuaf.demo.CDWeb.dao.ProductDAO;
 import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
 import vn.edu.hcmuaf.demo.CDWeb.repository.ProductRepository;
 import vn.edu.hcmuaf.demo.CDWeb.services.ProductService;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -16,6 +19,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class ProductController {
 
+    ProductDAO dao = new ProductDAO();
 
   @Autowired
     private  ProductService productService;
@@ -63,6 +67,20 @@ public class ProductController {
         return ResponseEntity.ok(productPage);
     }
 
+    @GetMapping("/detailProduct/{id}")
+    public ResponseEntity<?> getProductDetail(@PathVariable("id") long id) {
+        try {
+            Product product = productService.getProductById(id);
+            if (product != null) {
+                return ResponseEntity.ok(product);
+            } else {
+                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Không tìm thấy sản phẩm");
+            }
+        } catch (Exception e) {
+            // Xử lý ngoại lệ, ví dụ: in ra lỗi hoặc trả về mã lỗi phản hồi 500
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Đã xảy ra lỗi khi lấy thông tin sản phẩm");
+        }
+    }
 
 }
 

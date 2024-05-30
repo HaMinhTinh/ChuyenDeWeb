@@ -37,6 +37,81 @@ th {
   border-radius: 5px;
   font-size: 0.9rem;
 }
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.common-section {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  border-collapse: collapse;
+}
+
+.table-bordered {
+  border: 1px solid #dee2e6;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.cart__img-box img {
+  max-width: 50px;
+  height: auto;
+}
+
+.cart__item-del i {
+  cursor: pointer;
+  color: #ff0000;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
+}
+
+.cart__subtotal {
+  font-weight: bold;
+}
+
+
+
+.cart__page-btn .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.cart__page-btn .btn:hover {
+  background-color: #0056b3;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
 
 @media only screen and (max-width: 768px) {
   th,
