@@ -37,6 +37,7 @@ th {
   border-radius: 5px;
   font-size: 0.9rem;
 }
+
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -86,6 +87,31 @@ th {
   font-weight: bold;
 }
 
+.cart__page-btn {
+  display: flex;
+  align-items: center;
+}
+
+.cart__page-btn .addTOCart__btn {
+  width: 200px; /* Ensure both buttons have the same width */
+  margin-right: 10px; /* Space between buttons */
+}
+
+.cart__page-btn .addTOCart__btn a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.cart__page-btn .addTOCart__btn:disabled {
+  background-color: #ccc;
+}
+
+
 
 
 .cart__page-btn .btn {
@@ -112,6 +138,38 @@ th {
 .text-decoration-none {
   text-decoration: none !important;
 }
+
+/* cart-page.css */
+
+.addTOCart__btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+  text-align: center;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.addTOCart__btn:hover {
+  background-color: #ff4500;
+}
+
+.addTOCart__btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.cart__page-btn {
+  display: flex;
+  gap: 1rem;
+}
+
 
 @media only screen and (max-width: 768px) {
   th,

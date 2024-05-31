@@ -1,5 +1,4 @@
-import React, {useEffect} from "react";
-
+import React, { useEffect } from "react";
 import CommonSection from "../components/UI/common-section/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import "../styles/cart-page.css";
@@ -7,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
+import CurrencyFormatter from "../components/CurrencyFormatter";
 
 const Cart = () => {
     const totalAmount = useSelector((state) => state.cart.totalAmount);
@@ -68,11 +68,11 @@ const Cart = () => {
                             <div className="mt-4">
                                 <h6>
                                     Tổng:
-                                    <span className="cart__subtotal">{totalAmount}</span>
+                                    <span className="cart__subtotal"><CurrencyFormatter value={totalAmount} /> VNĐ</span>
                                 </h6>
                                 <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
                                 <div className="cart__page-btn">
-                                    <button className="addTOCart__btn me-4">
+                                    <button className="addTOCart__btn">
                                         <Link to="/foods">Tiếp tục mua</Link>
                                     </button>
                                     {cartItems.length > 0 ? (
@@ -85,6 +85,7 @@ const Cart = () => {
                                         </button>
                                     )}
                                 </div>
+
                             </div>
                         </Col>
                     </Row>
@@ -103,7 +104,7 @@ const Tr = ({ item, increaseQuantity, decreaseQuantity }) => {
                 <img src={imageUrl} alt="" />
             </td>
             <td className="text-center">{name}</td>
-            <td className="text-center">{price}</td>
+            <td className="text-center"><CurrencyFormatter value={item.price}/> VNĐ</td>
             <td className="text-center">
                 <div className="d-flex align-items-center justify-content-center">
                     <button className="btn btn-sm btn-secondary" onClick={() => decreaseQuantity(id)}>-</button>
