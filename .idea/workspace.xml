@@ -4,15 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="update json">
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="chỉnh lại giao diện trang productsDetail và cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ProductsDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ProductsDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/routes/Routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/routes/Routers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/cart-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/cart-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +147,7 @@
       <workItem from="1716732950263" duration="7746000" />
       <workItem from="1716741435386" duration="1270000" />
       <workItem from="1717081336856" duration="8880000" />
-      <workItem from="1717128187718" duration="1811000" />
+      <workItem from="1717128187718" duration="2482000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>
@@ -204,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1717088680738</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="chỉnh lại giao diện trang productsDetail và cart">
+      <created>1717131575539</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717131575539</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +242,7 @@
     <MESSAGE value="lọc sản phẩm và lọc theo danh mục" />
     <MESSAGE value="trang chi tiết sản phẩm" />
     <MESSAGE value="update json" />
-    <option name="LAST_COMMIT_MESSAGE" value="update json" />
+    <MESSAGE value="chỉnh lại giao diện trang productsDetail và cart" />
+    <option name="LAST_COMMIT_MESSAGE" value="chỉnh lại giao diện trang productsDetail và cart" />
   </component>
 </project>
