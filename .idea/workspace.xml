@@ -4,41 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="lọc sản phẩm và lọc theo danh mục">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ConfirmOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/FeeGNHController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/HistoryOrdersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/SuggestionsServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/VNPayController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/dao/OrderDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/dao/OrderItemsDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/entity/CartItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/entity/OrderRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/entity/ShippingInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ShippingFeeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/CurrencyFormatter.js" afterDir="false" />
+    <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="update json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/cart/CartItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/cart/CartItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/cart/Carts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/cart/Carts.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/UI/product-card/ProductCard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ProductsDetails.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ProductsDetails.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ReviewOrder.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ReviewOrder.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/SneakersDetails.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/routes/Routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/routes/Routers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/cart-page.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/cart-page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/footer.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/footer.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-card.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,29 +50,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/tinhh/OneDrive/Documents/CNPM/ChuyenDeWeb/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/services",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tinhh/OneDrive/Documents/sell-cake-master&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tinhh\OneDrive\Documents\CNPM\ChuyenDeWeb\backend\src\main\java\vn\edu\hcmuaf\demo\CDWeb\services" />
@@ -178,7 +152,8 @@
       <workItem from="1716692495854" duration="8100000" />
       <workItem from="1716732950263" duration="7746000" />
       <workItem from="1716741435386" duration="1270000" />
-      <workItem from="1717081336856" duration="6848000" />
+      <workItem from="1717081336856" duration="8880000" />
+      <workItem from="1717128187718" duration="1811000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>
@@ -215,7 +190,21 @@
       <option name="project" value="LOCAL" />
       <updated>1716561940207</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="trang chi tiết sản phẩm">
+      <created>1717088585672</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1717088585672</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update json">
+      <created>1717088680738</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717088680738</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +221,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/trantuan" />
+                        <option value="HaMinhTinh" />
                       </list>
                     </value>
                   </entry>
@@ -250,6 +239,8 @@
     <MESSAGE value="chỉnh lại web" />
     <MESSAGE value="load san pham trang chu" />
     <MESSAGE value="lọc sản phẩm và lọc theo danh mục" />
-    <option name="LAST_COMMIT_MESSAGE" value="lọc sản phẩm và lọc theo danh mục" />
+    <MESSAGE value="trang chi tiết sản phẩm" />
+    <MESSAGE value="update json" />
+    <option name="LAST_COMMIT_MESSAGE" value="update json" />
   </component>
 </project>

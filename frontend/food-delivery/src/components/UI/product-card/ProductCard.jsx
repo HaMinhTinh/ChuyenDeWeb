@@ -15,7 +15,6 @@ const ProductItem = (props) => {
 
     const addToCart = () => {
         if (!id || !name || !price || !imageUrl) return;
-        console.log(imageUrl);
         dispatch(
             cartActions.addItem({
                 id,
@@ -52,7 +51,7 @@ const ProductItem = (props) => {
                 <>
                     <Link to={`/detailProduct?id=${id}`} className="product__img">
                         {status === "new" && !discount && <span className="new-badge">New</span>}
-                        <img src={imageUrl} alt="product-img" style={{ width: '100px', height: '100px', objectFit: 'cover' }} />
+                        <img src={imageUrl} alt="product-img" />
                     </Link>
                     <div className="product__content">
                         <h5>{name}</h5>

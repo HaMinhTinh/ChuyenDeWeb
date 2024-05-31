@@ -8,7 +8,6 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Contact from "../pages/Contact";
 import FoodDetails from "../pages/ProductsDetails";
-import AllFoods from "../pages/AllProducts";
 import AdminHeader from "../Admin/index";
 import UserManagement from "../Admin/userManagement";
 import ProductManagement from "../Admin/productManagement";
@@ -19,6 +18,7 @@ import ChangePassword from  "../pages/changePassword"
 import ForgetPassword from "../pages/ForgetPassword";
 import OrderDetail from  "../pages/OrderDetail";
 import ConfirmCheckOut from "../pages/ConfirmCheckOut";
+import AllProducts from "../pages/AllProducts";
 const Routers = () => {
     return (
         <Routes>
@@ -28,7 +28,7 @@ const Routers = () => {
             <Route path="/revenueManagement" element={<RevenueManagement />} />
             <Route path="/" element={<Navigate to="/home" />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/foods" element={<AllFoods />} />
+            <Route path="/foods" element={<AllProducts />} />
             <Route path="/detailProduct" element={<FoodDetails />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />

@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import "../styles/product-card.css";
+import CurrencyFormatter from "../components/CurrencyFormatter";
 
 const ProductsDetails = () => {
     const [tab, setTab] = useState("desc");
@@ -59,7 +60,7 @@ const ProductsDetails = () => {
                                 <div className="product-info-container">
                                     <h2 className="product__title mb-3">{productDetail.name}</h2>
                                     <p className="product__price">
-                                        Giá: <span>{productDetail.price}</span>
+                                        Giá: <span><CurrencyFormatter value={productDetail.price}/> VNĐ </span>
                                     </p>
 
                                     <div className="size-selection mb-3">
