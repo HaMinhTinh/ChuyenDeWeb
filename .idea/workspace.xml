@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="chuyển từ trang productDetail sang trang cart">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/AllProducts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Cart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ConfirmCheckOut.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/ConfirmCheckOut.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +151,7 @@
       <workItem from="1716741435386" duration="1270000" />
       <workItem from="1717081336856" duration="8880000" />
       <workItem from="1717128187718" duration="7663000" />
+      <workItem from="1717140974880" duration="2603000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>

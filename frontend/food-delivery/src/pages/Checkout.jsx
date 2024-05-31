@@ -142,38 +142,38 @@ const Checkout = () => {
                       <span>{item.name}</span>
                     </div>
                     <div>
-                      <span className="badge bg-primary rounded-pill me-2">Price: <CurrencyFormatter value={item.price}/> VNĐ </span>
+                      <span className="badge bg-primary rounded-pill me-2">Giá tiền: <CurrencyFormatter value={item.price}/> VNĐ </span>
                       <br/>
-                      <span className="badge bg-secondary rounded-pill me-2">Quantity: {item.quantity}</span>
+                      <span className="badge bg-secondary rounded-pill me-2">Số lượng: {item.quantity}</span>
                     </div>
                   </li>
               ))}
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <span>Total Price Food:</span>
+                <span>Tổng giá sản phẩm:</span>
                 <span><CurrencyFormatter value={totalPrice.toFixed(2)}/> VNĐ </span>
               </li>
             </ul>
 
             <ul className="list-group mb-3">
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <span>Delivery charges:</span>
+                <span>Phí vận chuyển:</span>
                 <span className="badge bg-primary rounded-pill">{shippingFee}</span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <span>Delivery time:</span>
+                <span>Thời gian giao hàng:</span>
                 <span className="badge bg-primary rounded-pill">{shippingTime}</span>
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
-                <span>Total Price:</span>
+                <span>Tổng giá:</span>
                 <span className="badge bg-primary rounded-pill"><CurrencyFormatter value={totalPriceWithShipping}/> VNĐ </span>
               </li>
             </ul>
 
             <form className="card p-2">
               <div className="input-group">
-                <input type="text" className="form-control" placeholder="Promo code"/>
+                <input type="text" className="form-control" placeholder="Mã giảm giá"/>
                 <div className="input-group-append">
-                  <button type="submit" className="btn btn-secondary">Redeem</button>
+                  <button type="submit" className="btn btn-secondary">Xác nhận</button>
                 </div>
               </div>
             </form>
