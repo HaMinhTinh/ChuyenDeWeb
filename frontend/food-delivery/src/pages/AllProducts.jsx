@@ -88,12 +88,16 @@ const AllProducts = () => {
 
     const sortedProducts = filteredProducts.sort((a, b) => {
         switch (sortOption) {
+            //Sắp xếp theo tên sản phẩm từ A đến Z.
             case "name_asc":
                 return a.name.localeCompare(b.name);
+            //Sắp xếp theo tên sản phẩm từ Z đến A.
             case "name_desc":
                 return b.name.localeCompare(a.name);
+            //Sắp xếp theo giá sản phẩm từ thấp đến cao.
             case "price_asc":
                 return a.price - b.price;
+            //Sắp xếp theo giá sản phẩm từ cao đến thấp.
             case "price_desc":
                 return b.price - a.price;
             default:
@@ -113,7 +117,7 @@ const AllProducts = () => {
     };
 
     return (
-        <Helmet title="All-Foods">
+        <Helmet title="All-Products">
             <CommonSection title="Tất cả giày" />
             <section>
                 <Container>
@@ -154,16 +158,22 @@ const AllProducts = () => {
                             <div className="ads-container">
                                 <h5>Sự kiện hot trong ngày</h5>
                                 <div className="ad">
-                                    <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/07/sneakercon-conventionctr-1-scaled.jpg.webp" alt="Ad 1" className="ad-image" />
+                                    <a href="https://vtv.vn/doi-song/le-hoi-giay-dep-doc-dao-o-an-do-20161107172246666.htm">
+                                        <img src="https://cdn.authentic-shoes.com/wp-content/uploads/2023/07/sneakercon-conventionctr-1-scaled.jpg.webp" alt="Ad 1" className="ad-image" />
+                                    </a>
                                     <p>Lễ hội giày trên toàn thế giới</p>
                                 </div>
                                 <div className="ad">
-                                    <img src="https://dms.gov.vn/documents/53598/0/z5221766059537_c6047d5fff1ef38ff9df96b3be7f5594.jpg/a9fd2fcb-5f5a-4b24-9d4d-f73c0542293e" alt="Ad 2" className="ad-image" />
+                                    <a href="https://laodong.vn/phap-luat/chu-cua-hang-giay-dep-nhai-tri-gia-15-ti-dong-o-hai-phong-bi-khoi-to-1228603.ldo">
+                                        <img src="https://dms.gov.vn/documents/53598/0/z5221766059537_c6047d5fff1ef38ff9df96b3be7f5594.jpg/a9fd2fcb-5f5a-4b24-9d4d-f73c0542293e" alt="Ad 2" className="ad-image" />
+                                    </a>
                                     <p>Cơ quan chức năng ập vào kiểm tra lô hàng giày không rõ nguồn gốc</p>
                                 </div>
                                 <div className="ad">
-                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknG6NPDzAXX-GADM4Idb2Vb3p6MHZRbHRkq-46RIgaQ&s" alt="Ad 3" className="ad-image" />
-                                    <p>Cơ sở sản xuất giày uy tin chất lượng</p>
+                                    <a href="https://giayanba.com/xuong-san-xuat-giay-da-chat-luong-hang-dau-viet-nam/">
+                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRknG6NPDzAXX-GADM4Idb2Vb3p6MHZRbHRkq-46RIgaQ&s" alt="Ad 3" className="ad-image" />
+                                    </a>
+                                    <p>Cơ sở sản xuất giày uy tín chất lượng</p>
                                 </div>
                             </div>
                         </Col>
@@ -195,4 +205,3 @@ const AllProducts = () => {
 };
 
 export default AllProducts;
-    
