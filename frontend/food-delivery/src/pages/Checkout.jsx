@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import CurrencyFormatter from "../components/CurrencyFormatter";
 
 const Checkout = () => {
   const [provinces, setProvinces] = useState([]);
@@ -141,7 +142,7 @@ const Checkout = () => {
                       <span>{item.name}</span>
                     </div>
                     <div>
-                      <span className="badge bg-primary rounded-pill me-2">Price: {item.price}</span>
+                      <span className="badge bg-primary rounded-pill me-2">Price: <CurrencyFormatter value={item.price}/> VNĐ </span>
                       <br/>
                       <span className="badge bg-secondary rounded-pill me-2">Quantity: {item.quantity}</span>
                     </div>
@@ -149,7 +150,7 @@ const Checkout = () => {
               ))}
               <li className="list-group-item d-flex justify-content-between align-items-center">
                 <span>Total Price Food:</span>
-                <span>{totalPrice.toFixed(2)}</span>
+                <span><CurrencyFormatter value={totalPrice.toFixed(2)}/> VNĐ </span>
               </li>
             </ul>
 
@@ -164,7 +165,7 @@ const Checkout = () => {
               </li>
               <li className="list-group-item d-flex justify-content-between align-items-center">
                 <span>Total Price:</span>
-                <span className="badge bg-primary rounded-pill">{totalPriceWithShipping}</span>
+                <span className="badge bg-primary rounded-pill"><CurrencyFormatter value={totalPriceWithShipping}/> VNĐ </span>
               </li>
             </ul>
 
