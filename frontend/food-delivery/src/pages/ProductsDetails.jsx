@@ -3,7 +3,7 @@ import Helmet from "../components/Helmet/Helmet";
 import { Container, Row, Col } from "reactstrap";
 import { useDispatch } from "react-redux";
 import "../styles/product-details.css";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import "../styles/product-card.css";
@@ -17,6 +17,8 @@ const ProductsDetails = () => {
     const [selectedSize, setSelectedSize] = useState(null); // State to manage selected size
     const { id } = useParams();
     const [productDetail, setProductDetail] = useState(null);
+    const navigate = useNavigate(); // Initialize useNavigate
+    const dispatch = useDispatch();
 
     useEffect(() => {
         const fetchProductDetail = async () => {
@@ -43,7 +45,17 @@ const ProductsDetails = () => {
     };
 
     const addToCart = () => {
-        // Your addToCart logic here
+        // Add product to cart
+        dispatch(cartActions.addItem({
+            id: productDetail.id,
+            name: productDetail.name,
+            price: productDetail.price,
+            imageUrl: productDetail.imageUrl,
+            quantity: 1, // Assuming quantity is 1 for simplicity
+            size: selectedSize,
+        }));
+        // Navigate to the cart page
+        navigate("/cart");
     };
 
     return (
