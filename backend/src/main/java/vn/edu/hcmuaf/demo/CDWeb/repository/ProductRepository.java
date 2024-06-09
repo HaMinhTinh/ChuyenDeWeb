@@ -1,5 +1,6 @@
 package vn.edu.hcmuaf.demo.CDWeb.repository;
 
+import jakarta.transaction.Transactional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -31,6 +32,10 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("SELECT p FROM Product p")
     Page<Product> findAllProducts(Pageable pageable);
+
+    @Transactional
+    void deleteByName(String name);
+    Product findByName(String name);
 
 
 

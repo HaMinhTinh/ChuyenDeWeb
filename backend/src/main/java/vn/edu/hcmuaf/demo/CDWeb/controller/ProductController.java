@@ -21,7 +21,7 @@ public class ProductController {
 
     ProductDAO dao = new ProductDAO();
 
-  @Autowired
+    @Autowired
     private  ProductService productService;
 
     @Autowired
@@ -80,6 +80,26 @@ public class ProductController {
             // Xử lý ngoại lệ, ví dụ: in ra lỗi hoặc trả về mã lỗi phản hồi 500
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Đã xảy ra lỗi khi lấy thông tin sản phẩm");
         }
+    }
+
+    @PostMapping("/add")
+    public Product addProduct(@RequestBody Product product) {
+        return productService.addProduct(product);
+    }
+
+    @DeleteMapping("/id/{id}")
+    public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
+    }
+
+    @DeleteMapping("/name/{name}")
+    public void deleteProductByName(@PathVariable String name) {
+        productService.deleteProductByName(name);
+    }
+
+    @PutMapping("/update/{id}")
+    public Product updateProduct(@PathVariable Long id, @RequestBody Product newProductData) {
+        return productService.updateProduct(id, newProductData);
     }
 
 }
