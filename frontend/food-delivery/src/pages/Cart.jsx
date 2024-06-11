@@ -7,10 +7,12 @@ import { Container, Row, Col } from "reactstrap";
 import { cartActions } from "../store/shopping-cart/cartSlice";
 import { Link } from "react-router-dom";
 import CurrencyFormatter from "../components/CurrencyFormatter";
+import { createSlice } from '@reduxjs/toolkit';
 
 const Cart = () => {
     const totalAmount = useSelector((state) => state.cart.totalAmount);
     const cartItems = useSelector((state) => state.cart.cartItems);
+    console.log(cartItems);
     const dispatch = useDispatch();
 
     const userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
@@ -20,6 +22,32 @@ const Cart = () => {
             window.location.href = "/login";
         }
     }, [userInfo]);
+
+    const initialState = {
+        cartItems: [],
+        totalAmount: 0,
+        // các thuộc tính khác
+    };
+
+    const cartSlice = createSlice({
+        name: 'cart',
+        initialState,
+        reducers: {
+            addItem: (state, action) => {
+                const newItem = action.payload;
+                // logic để thêm item
+            },
+            removeItem: (state, action) => {
+                const id = action.payload;
+                // logic để xoá item
+            },
+            // các reducers khác
+        },
+    });
+
+    // export const cartActions = cartSlice.actions;
+    // export default cartSlice.reducer;
+
 
     const deleteItem = (id) => {
         dispatch(cartActions.removeItem(id));
@@ -97,7 +125,7 @@ const Cart = () => {
 
 const Tr = ({ item, increaseQuantity, decreaseQuantity }) => {
     const { id, imageUrl, name, price, quantity } = item;
-
+    console.log(item);
     return (
         <tr>
             <td className="text-center cart__img-box">
