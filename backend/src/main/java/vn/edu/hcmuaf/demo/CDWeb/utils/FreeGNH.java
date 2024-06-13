@@ -15,12 +15,12 @@ import java.util.Date;
 public class FreeGNH {
     private static final String API_ENDPOINT = "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/fee";
     private static final String API_LEADTIME = "https://online-gateway.ghn.vn/shiip/public-api/v2/shipping-order/leadtime";
-      private static final String API_TOKEN = "274efaf3-b96d-11ed-bcba-eac62dba9bd9";
+    private static final String API_TOKEN = "274efaf3-b96d-11ed-bcba-eac62dba9bd9";
     private static final String SHOP_ID = "3860210";
 
     public static String calculateShippingFee(
-                                              int toDistrictId, String toWardCode,
-                                              int height, int length, int weight, int width) throws IOException {
+            int toDistrictId, String toWardCode,
+            int height, int length, int weight, int width) throws IOException {
 
         OkHttpClient client = new OkHttpClient();
 
@@ -43,6 +43,8 @@ public class FreeGNH {
                 "    \"coupon\": null\n" +
                 "}";
 
+        System.out.println("Request Body: " + jsonBody); // Logging request body
+
         RequestBody body = RequestBody.create(jsonBody, mediaType);
 
         Request request = new Request.Builder()
@@ -57,6 +59,8 @@ public class FreeGNH {
 
         // Đảm bảo phản hồi thành công
         if (!response.isSuccessful()) {
+            System.out.println("Response Code: " + response.code()); // Logging response code
+            System.out.println("Response Body: " + response.body().string()); // Logging response body
             throw new IOException("Unexpected response code: " + response);
         }
 
@@ -69,13 +73,13 @@ public class FreeGNH {
         JSONObject dataObject = jsonObject.getJSONObject("data");
         int totalValueVND = dataObject.getInt("total");
 
-// Define the exchange rate from VND to USD
+        // Define the exchange rate from VND to USD
         double exchangeRate = 0.0000039; // Example exchange rate, you should use the current rate
 
-// Convert the total value from VND to USD
+        // Convert the total value from VND to USD
         double totalValueUSD = totalValueVND * exchangeRate;
 
-// Convert the total value to a string
+        // Convert the total value to a string
         String totalUSDString = String.format("%.2f", totalValueUSD);
 
         return totalUSDString;
@@ -108,6 +112,8 @@ public class FreeGNH {
         try (Response response = client.newCall(request).execute()) {
             // Ensure the response is successful
             if (!response.isSuccessful()) {
+                System.out.println("Response Code: " + response.code()); // Logging response code
+                System.out.println("Response Body: " + response.body().string()); // Logging response body
                 throw new IOException("Unexpected response code: " + response);
             }
 
@@ -125,8 +131,6 @@ public class FreeGNH {
             return formattedDate;
         }
     }
-
-
 
     public static int getDistrictId(String name) {
         int result = -1;
@@ -157,10 +161,11 @@ public class FreeGNH {
             }
             return result;
         } catch (Exception e) {
-            // TODO: handle exception
+            e.printStackTrace();
         }
         return -1;
     }
+
     public static String getDistrictIdOfWard(String name, int huyen) {
         String result = " ";
         try {
@@ -168,7 +173,7 @@ public class FreeGNH {
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("POST");
             conn.setRequestProperty("Content-Type", "application/json");
-            conn.setRequestProperty("Token",API_TOKEN);
+            conn.setRequestProperty("Token", API_TOKEN);
             conn.setDoOutput(true);
 
             JSONObject jsonInput = new JSONObject();
@@ -192,22 +197,23 @@ public class FreeGNH {
             for (int i = 0; i < data.length(); i++) {
                 JSONObject district = data.getJSONObject(i);
                 if (district.getString("WardName").equals(name)) {
-                    result = String.valueOf(district.getInt("WardCode"));
+                    result = district.getString("WardCode");
                     break;
                 }
             }
 
-            return  result;
+            return result;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
+
     public static void main(String[] args) throws IOException {
-        System.out.println(calculateShippingFee(getDistrictId("Quận 2"), getDistrictIdOfWard("Phường Thủ Thiêm",getDistrictId("Quận 2")),50, 50, 50, 50));
+        System.out.println(calculateShippingFee(getDistrictId("Quận 2"), getDistrictIdOfWard("Phường Thủ Thiêm", getDistrictId("Quận 2")), 50, 50, 50, 50));
         System.out.println(getDistrictId("Quận 2"));
-        System.out.println(getDistrictIdOfWard("Phường Thủ Thiêm",getDistrictId("Quận 2")));
-        System.out.println(calculateShippingTime(1443,"20211"));
+        System.out.println(getDistrictIdOfWard("Phường Thủ Thiêm", getDistrictId("Quận 2")));
+        System.out.println(calculateShippingTime(1443, "20211"));
     }
 }
