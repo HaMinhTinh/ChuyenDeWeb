@@ -96,7 +96,7 @@ const Cart = () => {
                             <div className="mt-4">
                                 <h6>
                                     Tổng:
-                                    <span className="cart__subtotal"><CurrencyFormatter value={totalAmount}/> VNĐ</span>
+                                    <span className="cart__subtotal"> <CurrencyFormatter value={totalAmount}/> VNĐ</span>
                                 </h6>
                                 <p>Thuế và phí vận chuyển sẽ được tính khi thanh toán</p>
                                 <div className="cart__page-btn">
