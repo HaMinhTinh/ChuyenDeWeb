@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vn.edu.hcmuaf.demo.CDWeb.dao.ProductDAO;
 import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
+import vn.edu.hcmuaf.demo.CDWeb.entity.ProductCategory;
+import vn.edu.hcmuaf.demo.CDWeb.repository.ProductCategoryRepository;
 import vn.edu.hcmuaf.demo.CDWeb.repository.ProductRepository;
+import vn.edu.hcmuaf.demo.CDWeb.request.AddProductRequest;
 import vn.edu.hcmuaf.demo.CDWeb.services.ProductService;
 
 import java.sql.SQLException;
@@ -22,7 +25,10 @@ public class ProductController {
     ProductDAO dao = new ProductDAO();
 
     @Autowired
-    private  ProductService productService;
+    private ProductService productService;
+
+    @Autowired
+    private ProductCategoryRepository categoryRepository;
 
     @Autowired
     public ProductController(ProductService productService) {
@@ -33,6 +39,11 @@ public class ProductController {
     public ResponseEntity<?> getAllProducts() {
         List<Product> productList = productService.getAllProducts();
         return ResponseEntity.ok(productList);
+    }
+
+    @GetMapping("/allCategory")
+    public ResponseEntity<?> allCategory() {
+        return ResponseEntity.ok(categoryRepository.findAll());
     }
 
     @GetMapping("/productsByCategory")
@@ -49,7 +60,7 @@ public class ProductController {
 
 
     @GetMapping("/productByDiscount")
-    public ResponseEntity<?> getProductByDiscount(@RequestParam("discount") int discount){
+    public ResponseEntity<?> getProductByDiscount(@RequestParam("discount") int discount) {
         List<Product> productList = productService.getProductsByDiscount(discount);
         return ResponseEntity.ok(productList);
 
@@ -83,11 +94,10 @@ public class ProductController {
     }
 
     @PostMapping("/add")
-    public Product addProduct(@RequestBody Product product) {
+    public Product addProduct(@RequestBody AddProductRequest product) {
         return productService.addProduct(product);
     }
-
-    @DeleteMapping("/id/{id}")
+    @DeleteMapping("/delete/{id}")
     public void deleteProduct(@PathVariable Long id) {
         productService.deleteProduct(id);
     }
@@ -98,7 +108,7 @@ public class ProductController {
     }
 
     @PutMapping("/update/{id}")
-    public Product updateProduct(@PathVariable Long id, @RequestBody Product newProductData) {
+    public ResponseEntity<?> updateProduct(@PathVariable Long id, @RequestBody AddProductRequest newProductData) {
         return productService.updateProduct(id, newProductData);
     }
 

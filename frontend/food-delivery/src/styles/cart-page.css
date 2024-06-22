@@ -3,7 +3,7 @@ th {
 }
 
 .cart__img-box {
-  width: 80px;
+  width: 200px;
 }
 
 .cart__img-box img {
@@ -12,34 +12,11 @@ th {
 
 .cart__item-del i {
   cursor: pointer;
-}
-
-.cart__page-btn {
-  display: flex;
-  flex-wrap: nowrap;
-  margin: 2rem 0;
-}
-
-.cart__page-btn button a:hover {
-  color: #fff;
-}
-
-.cart__subtotal {
-  color: #df2020;
-  font-size: 1.5rem;
-}
-
-.addTOCart__btn {
-  border: none;
-  padding: 7px 14px;
-  background: #df2020;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 0.9rem;
+  color: #ff0000;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -70,13 +47,8 @@ th {
 }
 
 .cart__img-box img {
-  max-width: 50px;
+  max-width: 150px;
   height: auto;
-}
-
-.cart__item-del i {
-  cursor: pointer;
-  color: #ff0000;
 }
 
 .mt-4 {
@@ -85,21 +57,18 @@ th {
 
 .cart__subtotal {
   font-weight: bold;
+  font-size: 1rem;
 }
 
 .cart__page-btn {
   display: flex;
   align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
 .cart__page-btn .addTOCart__btn {
-  width: 200px; /* Ensure both buttons have the same width */
-  margin-right: 10px; /* Space between buttons */
-}
-
-.cart__page-btn .addTOCart__btn a {
-  display: block;
-  width: 100%;
+  width: 200px;
   text-align: center;
   padding: 10px;
   color: #fff;
@@ -107,12 +76,16 @@ th {
   border-radius: 5px;
 }
 
+.cart__page-btn .addTOCart__btn a {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+}
+
 .cart__page-btn .addTOCart__btn:disabled {
   background-color: #ccc;
 }
-
-
-
 
 .cart__page-btn .btn {
   background-color: #007bff;
@@ -123,7 +96,7 @@ th {
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
 }
 
@@ -139,8 +112,6 @@ th {
   text-decoration: none !important;
 }
 
-/* cart-page.css */
-
 .addTOCart__btn {
   display: inline-block;
   padding: 10px 20px;
@@ -153,7 +124,7 @@ th {
   transition: background-color 0.3s ease;
   margin-bottom: 20px;
   text-align: center;
-  white-space: nowrap; /* Prevent text from wrapping */
+  white-space: nowrap;
 }
 
 .addTOCart__btn:hover {
@@ -170,10 +141,41 @@ th {
   gap: 1rem;
 }
 
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.modal-header {
+  background-color: #f0f0f0;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+}
+
+.modal-footer {
+  justify-content: center;
+}
+
+.modal-footer button {
+  margin-right: 10px;
+}
+
 
 @media only screen and (max-width: 768px) {
   th,
   td {
     font-size: 0.8rem;
+  }
+
+  .cart__page-btn {
+    flex-direction: column;
+    align-items: stretch;
   }
 }

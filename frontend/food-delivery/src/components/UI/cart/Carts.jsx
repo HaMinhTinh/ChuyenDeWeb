@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
 
 import "../../../styles/shopping-cart.css";
+import CurrencyFormatter from "../../CurrencyFormatter";
 
 const Carts = () => {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ const Carts = () => {
 
           <div className="cart__bottom d-flex align-items-center justify-content-between">
             <h6>
-              Tổng phụ : <span>${totalAmount}</span>
+              Tổng phụ : <span><CurrencyFormatter value={totalAmount} /> VNĐ</span>
             </h6>
             <button>
               <Link to="/checkout" onClick={toggleCart}>

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/backend/CDWeb.iml" filepath="$PROJECT_DIR$/backend/CDWeb.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/CDWeb-Test.iml" filepath="$PROJECT_DIR$/.idea/CDWeb-Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/CDW.iml" filepath="$PROJECT_DIR$/.idea/CDW.iml" />
       <module fileurl="file://$PROJECT_DIR$/backend/backend.iml" filepath="$PROJECT_DIR$/backend/backend.iml" />
     </modules>
   </component>

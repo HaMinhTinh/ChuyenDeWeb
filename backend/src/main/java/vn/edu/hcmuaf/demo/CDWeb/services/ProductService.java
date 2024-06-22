@@ -1,13 +1,18 @@
 package vn.edu.hcmuaf.demo.CDWeb.services;
 
 import jakarta.transaction.Transactional;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import vn.edu.hcmuaf.demo.CDWeb.entity.Product;
+import vn.edu.hcmuaf.demo.CDWeb.entity.ProductCategory;
+import vn.edu.hcmuaf.demo.CDWeb.repository.ProductCategoryRepository;
 import vn.edu.hcmuaf.demo.CDWeb.repository.ProductRepository;
+import vn.edu.hcmuaf.demo.CDWeb.request.AddProductRequest;
 
 import java.util.List;
 import java.util.Optional;
@@ -16,6 +21,9 @@ import java.util.Optional;
 public class ProductService {
     @Autowired
     private static ProductRepository productRepository;
+
+    @Autowired
+    ProductCategoryRepository productCategoryRepository;
 
     @Autowired
     public ProductService(ProductRepository productRepository) {
@@ -33,15 +41,16 @@ public class ProductService {
         return productRepository.findByProductCategory(categoryId);
     }
 
-    public List<Product> getProductByStatus (String status){
+    public List<Product> getProductByStatus(String status) {
         return productRepository.findByProductStatus(status);
     }
 
-    public  List<Product> getProductsByDiscount(int discount){
+    public List<Product> getProductsByDiscount(int discount) {
         return productRepository.findByProductDiscount(discount);
     }
 
-    public List<Product> searchProducts(String keyword){
+
+    public List<Product> searchProducts(String keyword) {
         List<Product> products = productRepository.searchProducts(keyword);
         return products;
     }
@@ -56,8 +65,12 @@ public class ProductService {
         return productOptional.orElse(null);
     }
 
-    public Product addProduct(Product product) {
-        return productRepository.save(product);
+    public Product addProduct(AddProductRequest product) {
+        Product product1 = new Product();
+        BeanUtils.copyProperties(product, product1);
+        ProductCategory productCategory = productCategoryRepository.findById(product.getCategory()).orElse(null);
+        product1.setCategory(productCategory);
+        return productRepository.save(product1);
     }
 
     public void deleteProduct(Long productId) {
@@ -79,7 +92,7 @@ public class ProductService {
         }
     }
 
-    public Product updateProduct(Long productId, Product newProductData) {
+    public ResponseEntity<?> updateProduct(Long productId, AddProductRequest newProductData) {
         Optional<Product> optionalProduct = productRepository.findById(productId);
         if (optionalProduct.isPresent()) {
             Product existingProduct = optionalProduct.get();
@@ -87,10 +100,11 @@ public class ProductService {
             existingProduct.setDescription(newProductData.getDescription());
             existingProduct.setPrice(newProductData.getPrice());
             existingProduct.setDiscount(newProductData.getDiscount());
-            existingProduct.setImageUrl(newProductData.getImageUrl());
-            existingProduct.setStatus(newProductData.getStatus());
-            existingProduct.setCategory(newProductData.getCategory());
-            return productRepository.save(existingProduct);
+            if (newProductData.getImageUrl() != null) {
+                existingProduct.setImageUrl(newProductData.getImageUrl());
+            }
+            existingProduct.setCategory(productCategoryRepository.findById(newProductData.getCategory()).orElse(null));
+            return ResponseEntity.ok(productRepository.save(existingProduct));
         } else {
             throw new RuntimeException("Product not found with id: " + productId);
         }

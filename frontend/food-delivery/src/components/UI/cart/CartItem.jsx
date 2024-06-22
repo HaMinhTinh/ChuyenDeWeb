@@ -5,6 +5,7 @@ import "../../../styles/cart-item.css";
 
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
+import CurrencyFormatter from "../../CurrencyFormatter";
 
 const CartItem = ({ item }) => {
   const { id, name, imageUrl, price, quantity } = item;
@@ -31,7 +32,7 @@ const CartItem = ({ item }) => {
             <div>
               <h6 className="cart__product-title">{name}</h6>
               <p className="d-flex align-items-center gap-5 cart__product-price">
-                {quantity}x <span>{(price * quantity).toFixed(2)}</span>
+                {quantity}x <span><CurrencyFormatter value={price * quantity} /> VNĐ</span>
               </p>
               <div className="d-flex align-items-center justify-content-between increase__decrease-btn">
               <span className="increase__btn" onClick={increaseQuantity}>
