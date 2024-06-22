@@ -3,6 +3,7 @@ package vn.edu.hcmuaf.demo.CDWeb.entity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -29,7 +30,7 @@ public class Product {
     private BigDecimal price;
 
     @Column(name = "status")
-    private String status;
+    private String status = "ACTIVE";
 
     @Column(name = "discount")
     private int discount;
@@ -42,6 +43,7 @@ public class Product {
     private ProductCategory category;
 
     @Column(name = "created_at")
+    @CreationTimestamp
     private Timestamp createdAt;
 
 
@@ -65,6 +67,5 @@ public class Product {
 
     public Product(Long id, String name, String imageUrl, BigDecimal price, String status, Integer discount, String description, String category, Timestamp createdAt) {
     }
-
 
 }

@@ -5,10 +5,6 @@ public class ShippingFeeService {
     private String toDistrict;
     private String toWard;
 
-
-    // Constructors, getters, and setters
-    // You can generate them automatically in most IDEs or write them manually
-
     public ShippingFeeService() {}
 
     public ShippingFeeService( String toDistrict, String toWard ) {
