@@ -22,24 +22,19 @@ public class HistoryDao {
                 "JOIN customer ON customer.id_user = orders.UserID " +
                 "WHERE orders.UserID = ?";
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
 
             ps.setInt(1, id);
 
-            resultSet = ps.executeQuery(); // Execute the query without passing 'query' parameter
-
-            // Process the results
+            resultSet = ps.executeQuery();
             while (resultSet.next()) {
-                // Read information of each product and add to the list
                 int orderId = resultSet.getInt("OrderID");
                 String name = resultSet.getString("name");
                 String url = resultSet.getString("image_url");
                 String date = resultSet.getString("CreationDate");
                 String status = resultSet.getString("OrderStatus");
 
-                // Create a History object and add to the list
                 History history = new History(orderId, name, url, date, status);
                 historyList.add(history);
             }
@@ -63,15 +58,13 @@ public class HistoryDao {
                 "JOIN customer c ON c.id_user = o.UserID " +
                 "WHERE c.id_user = ?";
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
 
             ps.setInt(1, id);
 
-            resultSet = ps.executeQuery(); // Execute the query without passing 'query' parameter
+            resultSet = ps.executeQuery();
 
-            // Process the results
             while (resultSet.next()) {
                 // Read information of each product and add to the list
                 int orderId = resultSet.getInt("OrderID");
@@ -87,9 +80,8 @@ public class HistoryDao {
             }
 
         } catch (Exception ex) {
-            // Handle exceptions
+
         } finally {
-            // Close resources in the finally block
             try {
                 if (resultSet != null) resultSet.close();
                 if (connection != null) connection.close();
@@ -108,7 +100,6 @@ public class HistoryDao {
                 "set OrderStatus = 'Đã hủy'\n" +
                 "WHERE OrderID = ?";
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
@@ -120,7 +111,7 @@ public class HistoryDao {
             try {
                 if (connection != null) connection.close();
             } catch (SQLException e) {
-                // Handle exceptions
+
             }
         }
         return result;
