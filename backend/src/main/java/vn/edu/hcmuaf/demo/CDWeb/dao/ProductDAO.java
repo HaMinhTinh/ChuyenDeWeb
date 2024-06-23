@@ -19,20 +19,16 @@ public class ProductDAO {
         List<Product> productList = new ArrayList<>();
 
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             statement = connection.createStatement();
 
-            // Execute the query
             String query = "SELECT p.id, p.name, p.description, p.price, GROUP_CONCAT(i.url) AS image_urls, p.specification, p.dateTime, p.type_id\n" +
                     "FROM products p\n" +
                     "LEFT JOIN images i ON p.id = i.products_id\n" +
                     "GROUP BY p.id";
             resultSet = statement.executeQuery(query);
 
-            // Process the results
             while (resultSet.next()) {
-                // Read information of each product and add to the list
                 Long id = resultSet.getLong("id");
                 String name = resultSet.getString("name");
                 String imageUrl = resultSet.getString("imageUrl");
@@ -42,7 +38,6 @@ public class ProductDAO {
                 String description = resultSet.getString("description");
                 String category = resultSet.getString("category");
                 Timestamp createdAt = resultSet.getTimestamp("createdAt");
-                // Create a list of image URLs
                 List<String> imageUrls = new ArrayList<>();
                 if (imageUrl != null && !imageUrl.isEmpty()) {
                     String[] urls = imageUrl.split(",");
@@ -50,7 +45,6 @@ public class ProductDAO {
                         imageUrls.add(url.trim());
                     }
                 }
-                // Create a Product object and add to the list
                 Product product = new Product(id, name, imageUrl, price, status, discount, description, category, createdAt);
                 productList.add(product);
             }
@@ -59,7 +53,6 @@ public class ProductDAO {
         } catch (SQLException e) {
             LOGGER.severe("Error getting products: " + e.getMessage());
         } finally {
-            // Close all resources
             try {
                 if (resultSet != null) resultSet.close();
                 if (statement != null) statement.close();
@@ -78,17 +71,13 @@ public class ProductDAO {
         List<String> suggestions = new ArrayList<>();
 
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             statement = connection.createStatement();
 
-            // Execute the query to get search suggestions
             String searchQuery = "SELECT DISTINCT name FROM products WHERE name LIKE '%" + query + "%'";
             resultSet = statement.executeQuery(searchQuery);
 
-            // Process the results
             while (resultSet.next()) {
-                // Read suggestion and add to the list
                 String suggestion = resultSet.getString("name");
                 suggestions.add(suggestion);
             }
@@ -97,7 +86,6 @@ public class ProductDAO {
         } catch (SQLException e) {
             LOGGER.severe("Error getting search suggestions: " + e.getMessage());
         } finally {
-            // Close all resources
             try {
                 if (resultSet != null) resultSet.close();
                 if (statement != null) statement.close();
@@ -122,16 +110,14 @@ public class ProductDAO {
                 "FROM products p\n" +
                 "WHERE p.id = ?";
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
 
             ps.setLong(1, id);
 
-            resultSet = ps.executeQuery(); // Execute the query without passing 'query' parameter
+            resultSet = ps.executeQuery();
 
             while (resultSet.next()) {
-                // Read information of each product and add to the list
                 String name = resultSet.getString("name");
                 double price = Double.parseDouble(resultSet.getString("price"));
                 String description = resultSet.getString("description");
@@ -141,14 +127,13 @@ public class ProductDAO {
             }
 
         } catch (Exception ex) {
-            // Handle exceptions
+
         } finally {
-            // Close resources in the finally block
             try {
                 if (resultSet != null) resultSet.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
-                // Handle exceptions
+
             }
         }
         return productList;
@@ -163,29 +148,26 @@ public class ProductDAO {
                 "FROM image_url i \n" +
                 "WHERE i.id = ?";
         try {
-            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
             PreparedStatement ps = connection.prepareStatement(query);
 
             ps.setLong(1, id);
 
-            resultSet = ps.executeQuery(); // Execute the query without passing 'query' parameter
+            resultSet = ps.executeQuery();
 
-            // Process the results
             while (resultSet.next()) {
                 String url = resultSet.getString("url");
                 list.add(url);
             }
 
         } catch (Exception ex) {
-            // Handle exceptions
+
         } finally {
-            // Close resources in the finally block
             try {
                 if (resultSet != null) resultSet.close();
                 if (connection != null) connection.close();
             } catch (SQLException e) {
-                // Handle exceptions
+
             }
         }
         return list;
