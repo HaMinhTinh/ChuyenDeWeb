@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/review-order.css";
 
@@ -24,23 +24,21 @@ const ReviewOrder = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-            "http://127.0.0.1:8082/api/historyOrders",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({ idUser: userInfo.id_user || "" }),
-            }
+          "http://127.0.0.1:8082/api/historyOrders",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ idUser: userInfo.id_user || "" }),
+          }
         );
         if (response.ok) {
           const data = await response.json();
-          console.log("Dữ liệu nhận được: ", data); // Log dữ liệu nhận được
           setAllOrders(data);
-          console.error("Lịch sử thành công");
         } else {
           const errorMessage = await response.text();
-          console.error("Lỗi lịch sử " + errorMessage);
+          console.error("History error " + errorMessage);
         }
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu:", error);
@@ -108,7 +106,7 @@ const ReviewOrder = () => {
               </div>
               <div className="paging">
                 <div className="tab"></div>
-                <div id="ChoXacNhan" className="tabcontent">
+                <div id="ChoXacNhan" className="tabcontent d-block">
                   <table className="table">
                     <thead>
                       <tr>
@@ -121,33 +119,38 @@ const ReviewOrder = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {allOrders.map((order) => (
-                        <tr key={order.orderID}>
-                          <td style={{ width: "73px", paddingTop: "20px" }}>
-                            {order.orderID}
-                          </td>
-                          <td style={{ width: "63px", paddingTop: "20px" }}>
-                            {order.name}
-                          </td>
-                          <td>
-                            <img
-                              style={{ height: "50px" }}
-                              src={order.url}
-                              alt="product"
-                            />
-                          </td>
-                          <td style={{ paddingTop: "20px" }}>{order.date}</td>
-                          <td style={{ paddingTop: "20px" }}>{order.status}</td>
-                          <td style={{ paddingTop: "20px" }}>
-                            <a
-                              className="btn_blue"
-                              href={`/orderDetail?id=${order.orderID}`}
-                            >
-                              Chi tiết
-                            </a>
-                          </td>
-                        </tr>
-                      ))}
+                      {allOrders?.map((order) => {
+                        console.log(order);
+                        return (
+                          <tr key={order.orderID}>
+                            <td style={{ width: "73px", paddingTop: "20px" }}>
+                              {order.orderID}
+                            </td>
+                            <td style={{ width: "63px", paddingTop: "20px" }}>
+                              {order.name}
+                            </td>
+                            <td>
+                              <img
+                                style={{ height: "50px" }}
+                                src={order.url}
+                                alt="product"
+                              />
+                            </td>
+                            <td style={{ paddingTop: "20px" }}>{order.date}</td>
+                            <td style={{ paddingTop: "20px" }}>
+                              {order.status}
+                            </td>
+                            <td style={{ paddingTop: "20px" }}>
+                              <a
+                                className="btn_blue"
+                                href={`/orderDetail?id=${order.orderID}`}
+                              >
+                                Chi tiết
+                              </a>
+                            </td>
+                          </tr>
+                        );
+                      })}
                     </tbody>
                   </table>
                 </div>

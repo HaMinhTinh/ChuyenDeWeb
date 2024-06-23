@@ -22,15 +22,13 @@ export const PaymentProcess = () => {
       const userInfo = JSON.parse(sessionStorage.getItem("userInfo"));
       const storedShippingInfo =
         JSON.parse(localStorage.getItem("shippingInfo")) || {};
-      const storedOrderDetails =
-        JSON.parse(localStorage.getItem("orderDetails")) || [];
       const storedCartItems =
         JSON.parse(localStorage.getItem("cartItems")) || [];
       const userId = userInfo.id_user;
 
       axios
         .post("http://127.0.0.1:8082/api/confirmOrder", {
-          storedShippingInfo,
+          shippingInfo: storedShippingInfo,
           userId,
           storedCartItems,
         })

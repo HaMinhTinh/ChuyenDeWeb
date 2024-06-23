@@ -59,7 +59,7 @@ function AdminHeader() {
               <i className="fas fa-laugh-wink"></i>
             </div>
             <div className="sidebar-brand-text mx-3">
-              MITI FOOD <sup>2</sup>
+              SNEAKER <sup>2</sup>
             </div>
           </a>
 
@@ -123,7 +123,7 @@ function AdminHeader() {
                   <input
                     type="text"
                     className="form-control bg-light border-0 small"
-                    placeholder="Search for..."
+                    placeholder="Tìm kiếm ..."
                     aria-label="Search"
                     aria-describedby="basic-addon2"
                   />
@@ -193,7 +193,7 @@ function AdminHeader() {
                     }`}
                     aria-labelledby="alertsDropdown"
                   >
-                    <h6 className="dropdown-header">Alerts Center</h6>
+                    <h6 className="dropdown-header">Thông báo</h6>
                     <a
                       className="dropdown-item d-flex align-items-center"
                       href="#"
@@ -208,7 +208,7 @@ function AdminHeader() {
                           December 12, 2019
                         </div>
                         <span className="font-weight-bold">
-                          A new monthly report is ready to download!
+                          Báo cáo hàng tháng mới đã sẵn sàng để tải xuống!
                         </span>
                       </div>
                     </a>
@@ -225,7 +225,7 @@ function AdminHeader() {
                         <div className="small text-gray-500">
                           December 7, 2019
                         </div>
-                        $290.29 has been deposited into your account!
+                        290,290,000 đã được gửi vào tài khoản của bạn!
                       </div>
                     </a>
                     <a
@@ -241,15 +241,15 @@ function AdminHeader() {
                         <div className="small text-gray-500">
                           December 2, 2019
                         </div>
-                        Spending Alert: We've noticed unusually high spending
-                        for your account.
+                        Cảnh báo chi tiêu: Chúng tôi nhận thấy mức chi tiêu cao bất thường
+                        cho tài khoản của bạn.
                       </div>
                     </a>
                     <a
                       className="dropdown-item text-center small text-gray-500"
                       href="#"
                     >
-                      Show All Alerts
+                      Hiển thị tất cả
                     </a>
                   </div>
                 </li>
@@ -267,11 +267,11 @@ function AdminHeader() {
                     aria-expanded={showDropdown ? "true" : "false"}
                   >
                     <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                      Douglas McGee
+                      Sneaker
                     </span>
                     <img
                       className="img-profile rounded-circle"
-                      src="img/undraw_profile.svg"
+                      src="logo.jpg"
                     />
                   </a>
 
@@ -283,15 +283,15 @@ function AdminHeader() {
                   >
                     <a className="dropdown-item" href="#">
                       <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Profile
+                      Trang cá nhân
                     </a>
                     <a className="dropdown-item" href="#">
                       <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Settings
+                      Cài đặt
                     </a>
                     <a className="dropdown-item" href="#">
                       <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Activity Log
+                      Đăng nhập
                     </a>
                     <div className="dropdown-divider"></div>
                     <a
@@ -301,7 +301,7 @@ function AdminHeader() {
                       data-target="#logoutModal"
                     >
                       <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Logout
+                      Đăng xuất
                     </a>
                   </div>
                 </li>
