@@ -59,7 +59,7 @@ function AdminHeader() {
               <i className="fas fa-laugh-wink"></i>
             </div>
             <div className="sidebar-brand-text mx-3">
-              SNEAKER <sup>2</sup>
+              SNEAKER <sup></sup>
             </div>
           </a>
 
@@ -68,16 +68,16 @@ function AdminHeader() {
           <li className="nav-item active">
             <a className="nav-link" href="/admin">
               <i className="fas fa-fw fa-tachometer-alt"></i>
-              <span>Tổng quan </span>
+              <span>Bảng điều khiển</span>
             </a>
           </li>
 
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="/userManagement">
               <i className="fas fa-fw fa-table"></i>
               <span>Quản lý người dùng</span>
             </a>
-          </li>
+          </li> */}
           <li className="nav-item">
             <a className="nav-link" href="/productManagement">
               <i className="fas fa-fw fa-table"></i>
@@ -90,12 +90,12 @@ function AdminHeader() {
               <span>Quản lý đơn hàng</span>
             </a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="/revenueManagement">
               <i className="fas fa-fw fa-chart-area"></i>
               <span>Biểu đồ doanh thu</span>
             </a>
-          </li>
+          </li> */}
 
           <hr className="sidebar-divider d-none d-md-block" />
 

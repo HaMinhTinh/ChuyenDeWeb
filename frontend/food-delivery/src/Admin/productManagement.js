@@ -167,7 +167,7 @@ function ProductManagement() {
                 <i className="fas fa-laugh-wink"></i>
               </div>
               <div className="sidebar-brand-text mx-3">
-                SB Admin <sup>2</sup>
+                Sneaker <sup></sup>
               </div>
             </a>
 
@@ -176,10 +176,10 @@ function ProductManagement() {
             <li className="nav-item active">
               <a className="nav-link" href="index.html">
                 <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
+                <span>Bảng điều khiển</span>
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                   className="nav-link collapsed"
                   href="#"
@@ -225,7 +225,7 @@ function ProductManagement() {
                 <i className="fas fa-fw fa-table"></i>
                 <span>Quản lý người dùng</span>
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="/productManagement">
                 <i className="fas fa-fw fa-table"></i>
@@ -238,12 +238,12 @@ function ProductManagement() {
                 <span>Quản lý đơn hàng</span>
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/revenueManagement">
                 <i className="fas fa-fw fa-chart-area"></i>
                 <span>Biểu đồ doanh thu</span>
               </a>
-            </li>
+            </li> */}
 
             <hr className="sidebar-divider d-none d-md-block" />
 
@@ -318,7 +318,7 @@ function ProductManagement() {
                       </form>
                     </div>
                   </li>
-                  <li class="nav-item dropdown no-arrow mx-1">
+                  {/* <li class="nav-item dropdown no-arrow mx-1">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
@@ -379,8 +379,8 @@ function ProductManagement() {
                         Hiển thị tất cả
                       </a>
                     </div>
-                  </li>
-                  <li class="nav-item dropdown no-arrow mx-1">
+                  </li> */}
+                  {/* <li class="nav-item dropdown no-arrow mx-1">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
@@ -480,10 +480,10 @@ function ProductManagement() {
                         Read More Messages
                       </a>
                     </div>
-                  </li>
+                  </li> */}
 
                   <div class="topbar-divider d-none d-sm-block"></div>
-                  <li class="nav-item dropdown no-arrow">
+                  {/* <li class="nav-item dropdown no-arrow">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
@@ -528,7 +528,7 @@ function ProductManagement() {
                         Đăng xuất
                       </a>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
               <div class="container-fluid">
@@ -624,11 +624,11 @@ function ProductManagement() {
             </div>
 
             <footer class="sticky-footer bg-white">
-              <div class="container my-auto">
+              {/* <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                   <span>Copyright &copy; Your Website 2020</span>
                 </div>
-              </div>
+              </div> */}
             </footer>
           </div>
         </div>
