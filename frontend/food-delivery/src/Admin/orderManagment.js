@@ -49,7 +49,7 @@ export const OrderManagement = () => {
                 <i className="fas fa-laugh-wink"></i>
               </div>
               <div className="sidebar-brand-text mx-3">
-                SB Admin <sup>2</sup>
+                Sneaker <sup> </sup>
               </div>
             </a>
 
@@ -58,10 +58,10 @@ export const OrderManagement = () => {
             <li className="nav-item active">
               <a className="nav-link" href="index.html">
                 <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Dashboard</span>
+                <span>Bảng điều khiển</span>
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a
                   className="nav-link collapsed"
                   href="#"
@@ -100,14 +100,14 @@ export const OrderManagement = () => {
                   </a>
                 </div>
               </div>
-            </li>
+            </li> */}
 
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/userManagement">
                 <i className="fas fa-fw fa-table"></i>
                 <span>Quản lý người dùng</span>
               </a>
-            </li>
+            </li> */}
             <li className="nav-item">
               <a className="nav-link" href="/productManagement">
                 <i className="fas fa-fw fa-table"></i>
@@ -120,12 +120,12 @@ export const OrderManagement = () => {
                 <span>Quản lý đơn hàng</span>
               </a>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link" href="/revenueManagement">
                 <i className="fas fa-fw fa-chart-area"></i>
                 <span>Biểu đồ doanh thu</span>
               </a>
-            </li>
+            </li> */}
 
             <hr className="sidebar-divider d-none d-md-block" />
 
@@ -154,7 +154,7 @@ export const OrderManagement = () => {
                     <input
                         type="text"
                         class="form-control bg-light border-0 small"
-                        placeholder="Search for..."
+                        placeholder="Tìm kiếm ..."
                         aria-label="Search"
                         aria-describedby="basic-addon2"
                     />
@@ -187,7 +187,7 @@ export const OrderManagement = () => {
                           <input
                               type="text"
                               class="form-control bg-light border-0 small"
-                              placeholder="Search for..."
+                              placeholder="Tìm kiếm ..."
                               aria-label="Search"
                               aria-describedby="basic-addon2"
                           />
@@ -200,7 +200,7 @@ export const OrderManagement = () => {
                       </form>
                     </div>
                   </li>
-                  <li class="nav-item dropdown no-arrow mx-1">
+                  {/* <li class="nav-item dropdown no-arrow mx-1">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
@@ -217,7 +217,7 @@ export const OrderManagement = () => {
                         class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="alertsDropdown"
                     >
-                      <h6 class="dropdown-header">Alerts Center</h6>
+                      <h6 class="dropdown-header">Thông báo</h6>
                       <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="mr-3">
                           <div class="icon-circle bg-primary">
@@ -227,7 +227,7 @@ export const OrderManagement = () => {
                         <div>
                           <div class="small text-gray-500">December 12, 2019</div>
                           <span class="font-weight-bold">
-                          A new monthly report is ready to download!
+                          Một báo cáo hàng tháng mới đã sẵn sàng để tải xuống!
                         </span>
                         </div>
                       </a>
@@ -239,7 +239,7 @@ export const OrderManagement = () => {
                         </div>
                         <div>
                           <div class="small text-gray-500">December 7, 2019</div>
-                          $290.29 has been deposited into your account!
+                          290.295.000 vnđ đã được gửi vào tài khoản của bạn!
                         </div>
                       </a>
                       <a class="dropdown-item d-flex align-items-center" href="#">
@@ -250,15 +250,15 @@ export const OrderManagement = () => {
                         </div>
                         <div>
                           <div class="small text-gray-500">December 2, 2019</div>
-                          Spending Alert: We've noticed unusually high spending
-                          for your account.
+                          Cảnh báo chi tiêu: Chúng tôi nhận thấy mức chi tiêu cao bất thường
+                          cho tài khoản của bạn.
                         </div>
                       </a>
                       <a
                           class="dropdown-item text-center small text-gray-500"
                           href="#"
                       >
-                        Show All Alerts
+                        Hiển thị tất cả
                       </a>
                     </div>
                   </li>
@@ -279,7 +279,7 @@ export const OrderManagement = () => {
                         class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                         aria-labelledby="messagesDropdown"
                     >
-                      <h6 class="dropdown-header">Message Center</h6>
+                      <h6 class="dropdown-header">Lời nhắn</h6>
                       <a class="dropdown-item d-flex align-items-center" href="#">
                         <div class="dropdown-list-image mr-3">
                           <img
@@ -362,10 +362,10 @@ export const OrderManagement = () => {
                         Read More Messages
                       </a>
                     </div>
-                  </li>
+                  </li> */}
 
                   <div class="topbar-divider d-none d-sm-block"></div>
-                  <li class="nav-item dropdown no-arrow">
+                  {/* <li class="nav-item dropdown no-arrow">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
@@ -376,7 +376,7 @@ export const OrderManagement = () => {
                         aria-expanded="false"
                     >
                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                      Douglas McGee
+                      Sneaker
                     </span>
                       <img
                           class="img-profile rounded-circle"
@@ -410,7 +410,7 @@ export const OrderManagement = () => {
                         Logout
                       </a>
                     </div>
-                  </li>
+                  </li> */}
                 </ul>
               </nav>
               <div class="container-fluid">
@@ -473,11 +473,11 @@ export const OrderManagement = () => {
             </div>
 
             <footer class="sticky-footer bg-white">
-              <div class="container my-auto">
+              {/* <div class="container my-auto">
                 <div class="copyright text-center my-auto">
                   <span>Copyright &copy; Your Website 2020</span>
                 </div>
-              </div>
+              </div> */}
             </footer>
           </div>
         </div>

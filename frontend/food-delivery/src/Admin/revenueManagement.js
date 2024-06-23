@@ -83,12 +83,12 @@ function RevenueManagement() {
               <span>Quản lý sản phẩm</span>
             </a>
           </li>
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link" href="/revenueManagement">
               <i className="fas fa-fw fa-chart-area"></i>
               <span>Biểu đồ doanh thu</span>
             </a>
-          </li>
+          </li> */}
 
           <hr className="sidebar-divider d-none d-md-block" />
 
