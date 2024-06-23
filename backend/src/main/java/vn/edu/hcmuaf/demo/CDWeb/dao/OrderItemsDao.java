@@ -13,17 +13,21 @@ public class OrderItemsDao {
         PreparedStatement preparedStatement = null;
 
         try {
+            // Connect to the database
             connection = DatabaseConnectionTest.getConnection();
 
+            // Create the SQL statement
             String query = "INSERT INTO orderitems (ProductID, OrderID, Quantity, Price, Discount) VALUES (?, ?, ?, ?, ?)";
             preparedStatement = connection.prepareStatement(query);
 
+            // Set parameters
             preparedStatement.setLong(1, productId);
             preparedStatement.setLong(2, orderId);
             preparedStatement.setInt(3, quantity);
             preparedStatement.setDouble(4, price);
             preparedStatement.setDouble(5, discount);
 
+            // Execute the statement
             preparedStatement.executeUpdate();
 
             LOGGER.info("Inserted new order item into the database");
@@ -31,7 +35,7 @@ public class OrderItemsDao {
             LOGGER.severe("Error inserting order item: " + e.getMessage());
             throw e;
         } finally {
-
+            // Close the connection and statement
             if (preparedStatement != null) {
                 preparedStatement.close();
             }

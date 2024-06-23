@@ -20,10 +20,13 @@ public class SuggestionsServlet {
 
             List<String> suggestions = ProductDAO.getSearchSuggestions(query);
 
+
             response.setContentType("application/json");
             response.setCharacterEncoding("UTF-8");
 
+
             String json = convertListToJson(suggestions);
+
 
             PrintWriter out = response.getWriter();
             out.print(json);
