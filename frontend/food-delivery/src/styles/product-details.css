@@ -151,7 +151,7 @@
 .product__price {
   font-size: 20px;
   font-weight: bold;
-  color: #df2020;
+  color: #20afdf;
   margin-bottom: 20px;
 }
 
@@ -180,7 +180,7 @@
 .addTOCart__btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff6f61;
+  background-color: #61c0ff;
   color: white;
   border: none;
   border-radius: 5px;
@@ -191,7 +191,7 @@
 }
 
 .addTOCart__btn:hover {
-  background-color: #ff4500;
+  background-color: #2600ff;
 }
 
 .tabs {
