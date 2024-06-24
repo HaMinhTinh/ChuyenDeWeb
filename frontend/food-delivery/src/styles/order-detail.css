@@ -1,8 +1,9 @@
-.parent-button{
+.parent-button {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .centered-button {
     display: inline-block;
     padding: 10px 20px;

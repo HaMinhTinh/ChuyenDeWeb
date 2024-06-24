@@ -51,11 +51,11 @@ export const PaymentProcess = () => {
   const getMessageFromStatus = (status) => {
     switch (status) {
       case "PENDING":
-        return "Your Order Is Processing";
+        return "Đơn hàng của bạn đang được xử lý";
       case "SUCCESS":
-        return "Your Order Success";
+        return "Bạn đã đặt hàng thành công";
       case "FAILED":
-        return "Your Order Failed";
+        return "Bạn đã đặt hàng thất bại";
     }
   };
   return (
