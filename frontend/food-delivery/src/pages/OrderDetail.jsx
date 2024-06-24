@@ -153,7 +153,7 @@ const OrderDetail = () => {
           </form>
         ))}
     </div>
-  );
+  );  
 };
 
 export default OrderDetail;

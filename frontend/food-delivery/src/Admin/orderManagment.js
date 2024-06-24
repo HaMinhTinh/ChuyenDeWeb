@@ -26,7 +26,7 @@ export const OrderManagement = () => {
         method: "DELETE",
       });
       if (resp.status == 200) {
-        toast("Delete An Order Success");
+        toast("Xóa đơn hàng thành công");
         await getAllOrder();
       }
     }
