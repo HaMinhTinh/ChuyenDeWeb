@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a7a6606a-80bf-4c3b-82af-053b5957d06a" name="Changes" comment="sửa lại giao diện màu sắc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/PaymentProcess.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/PaymentProcess.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/order-detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/order-detail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/product-details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/styles/review-order.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/styles/review-order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ConfirmOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/controller/ConfirmOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/dao/HistoryDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/vn/edu/hcmuaf/demo/CDWeb/dao/HistoryDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/Admin/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/Admin/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/components/Header/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/components/Header/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/Checkout.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/food-delivery/src/pages/OrderDetail.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/food-delivery/src/pages/OrderDetail.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +158,10 @@
       <workItem from="1719069546684" duration="5321000" />
       <workItem from="1719075375692" duration="822000" />
       <workItem from="1719158242311" duration="3231000" />
-      <workItem from="1719195065984" duration="10629000" />
+      <workItem from="1719195065984" duration="13171000" />
+      <workItem from="1719245039663" duration="2203000" />
+      <workItem from="1719323667851" duration="1026000" />
+      <workItem from="1719324797135" duration="10449000" />
     </task>
     <task id="LOCAL-00001" summary="load product và phân trang">
       <created>1716397340163</created>

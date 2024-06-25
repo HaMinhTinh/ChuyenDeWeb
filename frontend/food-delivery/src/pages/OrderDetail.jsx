@@ -11,9 +11,9 @@ const OrderDetail = () => {
   useEffect(() => {
     const fetchOrderDetail = async () => {
       try {
-        const orderId = new URLSearchParams(window.location.search).get("id");
+        const userId = new URLSearchParams(window.location.search).get("id");
         const response = await fetch(
-          `http://127.0.0.1:8082/api/orderDetail/${orderId}`
+          `http://127.0.0.1:8082/api/orderDetail/${userId}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -29,9 +29,8 @@ const OrderDetail = () => {
     fetchOrderDetail();
   }, []);
 
-  // Thay thế thẻ button bằng sự kiện onClick trực tiếp trên nút "Hủy đơn" và ngăn chặn hành vi mặc định của trình duyệt
   const cancelOrder = async (orderId, event) => {
-    event.preventDefault(); // Ngăn chặn hành vi mặc định của trình duyệt
+    event.preventDefault();
     try {
       const response = await fetch(
         `http://127.0.0.1:8082/api/cancelOrder/${orderId}`,
@@ -43,7 +42,6 @@ const OrderDetail = () => {
         }
       );
       if (response.ok) {
-        // Xử lý thành công, có thể cập nhật UI hoặc hiển thị thông báo
         navigate("/reviewOrder");
         console.log("Đã hủy đơn hàng thành công");
       } else {
@@ -63,12 +61,7 @@ const OrderDetail = () => {
       </div>
       {Array.isArray(orderDetail) &&
         orderDetail.map((order) => (
-          <form
-            action=""
-            method="post"
-            acceptCharset="UTF-8"
-            key={order.orderID}
-          >
+          <div key={order.orderID}>
             <div className="row">
               <div className="col-md-6">
                 <h2 style={{ fontSize: "25px" }}>Thông tin khách hàng</h2>
@@ -140,20 +133,22 @@ const OrderDetail = () => {
                     </tr>
                   </tbody>
                 </table>
-                <div className="parent-button">
-                  <button
-                    className="centered-button"
-                    onClick={(event) => cancelOrder(order.orderID, event)}
-                  >
-                    Hủy đơn
-                  </button>
-                </div>
               </div>
             </div>
-          </form>
+          </div>
         ))}
+      <div className="parent-button">
+        {orderDetail.length > 0 && (
+          <button
+            className="centered-button"
+            onClick={(event) => cancelOrder(orderDetail[0].orderID, event)}
+          >
+            Hủy đơn
+          </button>
+        )}
+      </div>
     </div>
-  );  
+  );
 };
 
 export default OrderDetail;

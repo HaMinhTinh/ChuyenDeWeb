@@ -1,18 +1,20 @@
 .parent-button {
     display: flex;
     justify-content: center;
-    align-items: center;
-}
-
-.centered-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    background-color: #3498db;
-    color: #fff;
+    margin-top: 20px;
+  }
+  
+  .centered-button {
+    background-color: #356adc;
+    color: white;
     border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
     border-radius: 5px;
-}
+  }
+  
+  .centered-button:hover {
+    background-color: #2331c8;
+  }
+  

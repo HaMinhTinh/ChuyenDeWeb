@@ -4,6 +4,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 export const OrderManagement = () => {
   const [orders, setOrders] = useState([]);
+
   const getAllOrder = async () => {
     try {
       const resp = await fetch(`http://127.0.0.1:8082/api/orders`, {
@@ -12,7 +13,7 @@ export const OrderManagement = () => {
           "Content-Type": "application/json",
         },
       });
-      if (resp.status == 200) {
+      if (resp.status === 200) {
         const jsonBody = await resp.json();
         setOrders(jsonBody);
       }
@@ -20,515 +21,228 @@ export const OrderManagement = () => {
       console.log(e);
     }
   };
+
   const handleDeleteOrder = async (od) => {
-    if (window.confirm("Bạn thực sự muốn xóa đơn hàng này ?")) {
-      const resp = await fetch(`http://127.0.0.1:8082/api/orders/${od?.id}`, {
-        method: "DELETE",
-      });
-      if (resp.status == 200) {
-        toast("Xóa đơn hàng thành công");
-        await getAllOrder();
+    if (window.confirm("Bạn thực sự muốn xóa đơn hàng này?")) {
+      try {
+        const resp = await fetch(`http://127.0.0.1:8082/api/orders/${od?.id}`, {
+          method: "DELETE",
+        });
+        if (resp.status === 200) {
+          toast("Xóa đơn hàng thành công");
+          await getAllOrder();
+        } else {
+          toast("Xóa đơn hàng thất bại");
+        }
+      } catch (error) {
+        console.error("Lỗi khi xóa đơn hàng:", error);
+        toast("Đã xảy ra lỗi khi xóa đơn hàng");
       }
     }
   };
+
   useLayoutEffect(() => {
     getAllOrder();
   }, []);
+
   return (
-      <div>
-        <div id="wrapper">
-          <ul
-              className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
-              id="accordionSidebar"
-          >
-            <a
-                className="sidebar-brand d-flex align-items-center justify-content-center"
-                href="index.html"
-            >
-              <div className="sidebar-brand-icon rotate-n-15">
-                <i className="fas fa-laugh-wink"></i>
-              </div>
-              <div className="sidebar-brand-text mx-3">
-                Sneaker <sup> </sup>
-              </div>
-            </a>
+    <div id="wrapper">
+      {/* Sidebar */}
+      <ul className="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+          <div className="sidebar-brand-text mx-3">
+            Sneaker 
+          </div>
+        </a>
 
-            <hr className="sidebar-divider my-0" />
+        <hr className="sidebar-divider my-0" />
 
-            <li className="nav-item active">
-              <a className="nav-link" href="index.html">
-                <i className="fas fa-fw fa-tachometer-alt"></i>
-                <span>Bảng điều khiển</span>
-              </a>
-            </li>
-            {/* <li className="nav-item">
-              <a
-                  className="nav-link collapsed"
-                  href="#"
-                  data-toggle="collapse"
-                  data-target="#collapsePages"
-                  aria-expanded="true"
-                  aria-controls="collapsePages"
-              >
-                <i className="fas fa-fw fa-folder"></i>
-                <span>Pages</span>
-              </a>
-              <div
-                  id="collapsePages"
-                  className="collapse"
-                  aria-labelledby="headingPages"
-                  data-parent="#accordionSidebar"
-              >
-                <div className="bg-white py-2 collapse-inner rounded">
-                  <h6 className="collapse-header">Login Screens:</h6>
-                  <a className="collapse-item" href="login.html">
-                    Login
-                  </a>
-                  <a className="collapse-item" href="register.html">
-                    Register
-                  </a>
-                  <a className="collapse-item" href="forgot-password.html">
-                    Forgot Password
-                  </a>
-                  <div className="collapse-divider"></div>
-                  <h6 className="collapse-header">Other Pages:</h6>
-                  <a className="collapse-item" href="404.html">
-                    404 Page
-                  </a>
-                  <a className="collapse-item" href="blank.html">
-                    Blank Page
-                  </a>
+        <li className="nav-item active">
+          <a className="nav-link" href="/">
+            <i className="fas fa-fw fa-tachometer-alt"></i>
+            <span>Bảng điều khiển</span>
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a className="nav-link" href="/productManagement">
+            <i className="fas fa-fw fa-table"></i>
+            <span>Quản lý sản phẩm</span>
+          </a>
+        </li>
+
+        <li className="nav-item">
+          <a className="nav-link" href="/orderManagement">
+            <i className="fas fa-fw fa-table"></i>
+            <span>Quản lý đơn hàng</span>
+          </a>
+        </li>
+
+        <hr className="sidebar-divider d-none d-md-block" />
+
+        <div className="text-center d-none d-md-inline">
+          <button className="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
+      </ul>
+      {/* End of Sidebar */}
+
+      {/* Content Wrapper */}
+      <div id="content-wrapper" className="d-flex flex-column">
+        {/* Main Content */}
+        <div id="content">
+          {/* Topbar */}
+          <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            <form className="form-inline">
+              <button className="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop">
+                <i className="fa fa-bars"></i>
+              </button>
+            </form>
+
+            <form className="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+              <div className="input-group">
+                <input
+                  type="text"
+                  className="form-control bg-light border-0 small"
+                  placeholder="Tìm kiếm ..."
+                  aria-label="Search"
+                  aria-describedby="basic-addon2"
+                />
+                <div className="input-group-append">
+                  <button className="btn btn-primary" type="button">
+                    <i className="fas fa-search fa-sm"></i>
+                  </button>
                 </div>
               </div>
-            </li> */}
+            </form>
 
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/userManagement">
-                <i className="fas fa-fw fa-table"></i>
-                <span>Quản lý người dùng</span>
-              </a>
-            </li> */}
-            <li className="nav-item">
-              <a className="nav-link" href="/productManagement">
-                <i className="fas fa-fw fa-table"></i>
-                <span>Quản lý sản phẩm</span>
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/orderManagement">
-                <i className="fas fa-fw fa-table"></i>
-                <span>Quản lý đơn hàng</span>
-              </a>
-            </li>
-            {/* <li className="nav-item">
-              <a className="nav-link" href="/revenueManagement">
-                <i className="fas fa-fw fa-chart-area"></i>
-                <span>Biểu đồ doanh thu</span>
-              </a>
-            </li> */}
-
-            <hr className="sidebar-divider d-none d-md-block" />
-
-            <div className="text-center d-none d-md-inline">
-              <button
-                  className="rounded-circle border-0"
-                  id="sidebarToggle"
-              ></button>
-            </div>
-          </ul>
-
-          <div id="content-wrapper" class="d-flex flex-column">
-            <div id="content">
-              <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-                <form class="form-inline">
-                  <button
-                      id="sidebarToggleTop"
-                      class="btn btn-link d-md-none rounded-circle mr-3"
-                  >
-                    <i class="fa fa-bars"></i>
-                  </button>
-                </form>
-
-                <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-                  <div class="input-group">
-                    <input
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item dropdown no-arrow d-sm-none">
+                <a
+                  className="nav-link dropdown-toggle"
+                  href="#"
+                  id="searchDropdown"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  <i className="fas fa-search fa-fw"></i>
+                </a>
+                <div
+                  className="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                  aria-labelledby="searchDropdown"
+                >
+                  <form className="form-inline mr-auto w-100 navbar-search">
+                    <div className="input-group">
+                      <input
                         type="text"
-                        class="form-control bg-light border-0 small"
+                        className="form-control bg-light border-0 small"
                         placeholder="Tìm kiếm ..."
                         aria-label="Search"
                         aria-describedby="basic-addon2"
-                    />
-                    <div class="input-group-append">
-                      <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                      </button>
-                    </div>
-                  </div>
-                </form>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item dropdown no-arrow d-sm-none">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="searchDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                      <i class="fas fa-search fa-fw"></i>
-                    </a>
-                    <div
-                        class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                        aria-labelledby="searchDropdown"
-                    >
-                      <form class="form-inline mr-auto w-100 navbar-search">
-                        <div class="input-group">
-                          <input
-                              type="text"
-                              class="form-control bg-light border-0 small"
-                              placeholder="Tìm kiếm ..."
-                              aria-label="Search"
-                              aria-describedby="basic-addon2"
-                          />
-                          <div class="input-group-append">
-                            <button class="btn btn-primary" type="button">
-                              <i class="fas fa-search fa-sm"></i>
-                            </button>
-                          </div>
-                        </div>
-                      </form>
-                    </div>
-                  </li>
-                  {/* <li class="nav-item dropdown no-arrow mx-1">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="alertsDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                      <i class="fas fa-bell fa-fw"></i>
-                      <span class="badge badge-danger badge-counter">3+</span>
-                    </a>
-                    <div
-                        class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="alertsDropdown"
-                    >
-                      <h6 class="dropdown-header">Thông báo</h6>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                          <div class="icon-circle bg-primary">
-                            <i class="fas fa-file-alt text-white"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="small text-gray-500">December 12, 2019</div>
-                          <span class="font-weight-bold">
-                          Một báo cáo hàng tháng mới đã sẵn sàng để tải xuống!
-                        </span>
-                        </div>
-                      </a>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                          <div class="icon-circle bg-success">
-                            <i class="fas fa-donate text-white"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="small text-gray-500">December 7, 2019</div>
-                          290.295.000 vnđ đã được gửi vào tài khoản của bạn!
-                        </div>
-                      </a>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="mr-3">
-                          <div class="icon-circle bg-warning">
-                            <i class="fas fa-exclamation-triangle text-white"></i>
-                          </div>
-                        </div>
-                        <div>
-                          <div class="small text-gray-500">December 2, 2019</div>
-                          Cảnh báo chi tiêu: Chúng tôi nhận thấy mức chi tiêu cao bất thường
-                          cho tài khoản của bạn.
-                        </div>
-                      </a>
-                      <a
-                          class="dropdown-item text-center small text-gray-500"
-                          href="#"
-                      >
-                        Hiển thị tất cả
-                      </a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown no-arrow mx-1">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="messagesDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                      <i class="fas fa-envelope fa-fw"></i>
-                      <span class="badge badge-danger badge-counter">7</span>
-                    </a>
-                    <div
-                        class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="messagesDropdown"
-                    >
-                      <h6 class="dropdown-header">Lời nhắn</h6>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                          <img
-                              class="rounded-circle"
-                              src="img/undraw_profile_1.svg"
-                              alt="..."
-                          />
-                          <div class="status-indicator bg-success"></div>
-                        </div>
-                        <div class="font-weight-bold">
-                          <div class="text-truncate">
-                            Hi there! I am wondering if you can help me with a
-                            problem I've been having.
-                          </div>
-                          <div class="small text-gray-500">
-                            Emily Fowler · 58m
-                          </div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                          <img
-                              class="rounded-circle"
-                              src="img/undraw_profile_2.svg"
-                              alt="..."
-                          />
-                          <div class="status-indicator"></div>
-                        </div>
-                        <div>
-                          <div class="text-truncate">
-                            I have the photos that you ordered last month, how
-                            would you like them sent to you?
-                          </div>
-                          <div class="small text-gray-500">Jae Chun · 1d</div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                          <img
-                              class="rounded-circle"
-                              src="img/undraw_profile_3.svg"
-                              alt="..."
-                          />
-                          <div class="status-indicator bg-warning"></div>
-                        </div>
-                        <div>
-                          <div class="text-truncate">
-                            Last month's report looks great, I am very happy with
-                            the progress so far, keep up the good work!
-                          </div>
-                          <div class="small text-gray-500">
-                            Morgan Alvarez · 2d
-                          </div>
-                        </div>
-                      </a>
-                      <a class="dropdown-item d-flex align-items-center" href="#">
-                        <div class="dropdown-list-image mr-3">
-                          <img
-                              class="rounded-circle"
-                              src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                              alt="..."
-                          />
-                          <div class="status-indicator bg-success"></div>
-                        </div>
-                        <div>
-                          <div class="text-truncate">
-                            Am I a good boy? The reason I ask is because someone
-                            told me that people say this to all dogs, even if they
-                            aren't good...
-                          </div>
-                          <div class="small text-gray-500">
-                            Chicken the Dog · 2w
-                          </div>
-                        </div>
-                      </a>
-                      <a
-                          class="dropdown-item text-center small text-gray-500"
-                          href="#"
-                      >
-                        Read More Messages
-                      </a>
-                    </div>
-                  </li> */}
-
-                  <div class="topbar-divider d-none d-sm-block"></div>
-                  {/* <li class="nav-item dropdown no-arrow">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        id="userDropdown"
-                        role="button"
-                        data-toggle="dropdown"
-                        aria-haspopup="true"
-                        aria-expanded="false"
-                    >
-                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                      Sneaker
-                    </span>
-                      <img
-                          class="img-profile rounded-circle"
-                          src="img/undraw_profile.svg"
                       />
-                    </a>
-                    <div
-                        class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                        aria-labelledby="userDropdown"
-                    >
-                      <a class="dropdown-item" href="#">
-                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Profile
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Settings
-                      </a>
-                      <a class="dropdown-item" href="#">
-                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Activity Log
-                      </a>
-                      <div class="dropdown-divider"></div>
-                      <a
-                          class="dropdown-item"
-                          href="#"
-                          data-toggle="modal"
-                          data-target="#logoutModal"
-                      >
-                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                        Logout
-                      </a>
+                      <div className="input-group-append">
+                        <button className="btn btn-primary" type="button">
+                          <i className="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
                     </div>
-                  </li> */}
-                </ul>
-              </nav>
-              <div class="container-fluid">
-                <h1 class="h3 mb-2 text-gray-800">Quản lý đơn hàng</h1>
+                  </form>
+                </div>
+              </li>
+              <div className="topbar-divider d-none d-sm-block"></div>
+            </ul>
+          </nav>
+          {/* End of Topbar */}
 
-                <div class="card shadow mb-4">
-                  <div className="card-header py-3 d-flex justify-content-between">
-                    <h6 className="m-0 font-weight-bold text-primary">
-                      Danh sách đơn hàng
-                    </h6>
-                  </div>
-                  <div class="card-body">
-                    <div class="table-responsive">
-                      <table
-                          class="table table-bordered"
-                          id="dataTable"
-                          width="100%"
-                          cellspacing="0"
-                      >
-                        <thead>
-                        <tr>
-                          <th>ID</th>
-                          <th>Tổng tiền</th>
-                          <th>Trạng Thái</th>
-                          <th>Địa chỉ nhận hàng</th>
-                          <th>Phương thức thanh toán</th>
-                          <th>Note</th>
-                          <th>Hành động</th>
+          {/* Page Content */}
+          <div className="container-fluid">
+            <h1 className="h3 mb-2 text-gray-800">Quản lý đơn hàng</h1>
+
+            {/* Data Table */}
+            <div className="card shadow mb-4">
+              <div className="card-header py-3">
+                <h6 className="m-0 font-weight-bold text-primary">Danh sách đơn hàng</h6>
+              </div>
+              <div className="card-body">
+                <div className="table-responsive">
+                  <table className="table table-bordered" id="dataTable" width="100%" cellSpacing="0">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Tổng tiền</th>
+                        <th>Trạng Thái</th>
+                        <th>Địa chỉ nhận hàng</th>
+                        <th>Phương thức thanh toán</th>
+                        <th>Note</th>
+                        <th>Hành động</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {orders.map((pd) => (
+                        <tr key={pd.id}>
+                          <td>{pd.id}</td>
+                          <td>{pd.total}</td>
+                          <td>{pd.status}</td>
+                          <td>{pd.address}</td>
+                          <td>{pd.method}</td>
+                          <td>{pd.note}</td>
+                          <td>
+                            <a onClick={() => handleDeleteOrder(pd)} className="delete-link">
+                              Xóa
+                            </a>
+                          </td>
                         </tr>
-                        </thead>
-                        <tbody>
-                        {orders?.map((pd) => {
-                          return (
-                              <tr>
-                                <td>{pd?.id}</td>
-                                <td>{pd?.total}</td>
-                                <td>{pd?.status}</td>
-                                <td>{pd?.address}</td>
-                                <td>{pd?.method}</td>
-                                <td>{pd?.note}</td>
-                                <td>
-                                  <a
-                                      onClick={() => {
-                                        handleDeleteOrder(pd);
-                                      }}
-                                      className="delete-link"
-                                  >
-                                    Xóa
-                                  </a>
-                                </td>
-                              </tr>
-                          );
-                        })}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
               </div>
             </div>
-
-            <footer class="sticky-footer bg-white">
-              {/* <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                  <span>Copyright &copy; Your Website 2020</span>
-                </div>
-              </div> */}
-            </footer>
           </div>
+          {/* End of Page Content */}
         </div>
+        {/* End of Main Content */}
 
-        <a class="scroll-to-top rounded" href="#page-top">
-          <i class="fas fa-angle-up"></i>
-        </a>
-
-        <div
-            class="modal fade"
-            id="logoutModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-        >
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">
-                  Ready to Leave?
-                </h5>
-                <button
-                    class="close"
-                    type="button"
-                    data-dismiss="modal"
-                    aria-label="Close"
-                >
-                  <span aria-hidden="true">×</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                Select "Logout" below if you are ready to end your current
-                session.
-              </div>
-              <div class="modal-footer">
-                <button
-                    class="btn btn-secondary"
-                    type="button"
-                    data-dismiss="modal"
-                >
-                  Cancel
-                </button>
-                <a class="btn btn-primary" href="login.html">
-                  Logout
-                </a>
-              </div>
+        {/* Footer */}
+        <footer className="sticky-footer bg-white">
+          <div className="container my-auto">
+            <div className="text-center">
+              <span>Footer text</span>
             </div>
           </div>
-        </div>
-        <ToastContainer />
+        </footer>
+        {/* End of Footer */}
       </div>
+      {/* End of Content Wrapper */}
+
+      {/* Scroll to Top Button */}
+      <a className="scroll-to-top rounded" href="#page-top">
+        <i className="fas fa-angle-up"></i>
+      </a>
+
+      {/* Logout Modal */}
+      {/* <div className="modal fade" id="logoutModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog" role="document">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h5 className="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+              <button className="close" type="button" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <div className="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div className="modal-footer">
+              <button className="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+              <a className="btn btn-primary" href="login.html">Logout</a>
+            </div>
+          </div>
+        </div>
+      </div> */}
+      {/* End of Logout Modal */}
+
+      {/* Toast Container */}
+      <ToastContainer />
+    </div>
   );
 };
