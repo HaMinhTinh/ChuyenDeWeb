@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./assests/css/sb-admin-2.min.css";
-
 import "./vendor/fontawesome-free/css/all.min.css";
 
 function AdminHeader() {
@@ -46,18 +45,29 @@ function AdminHeader() {
   };
   return (
     <div>
+      <style>
+        {`
+          .bg-gradient-primary {
+            background-color: #4e73df;
+            background-image: linear-gradient(180deg,#4e73df 10%,#224abe 100%);
+            background-size: cover;
+          }
+          .custom-sidebar {
+            background-color: #87CEEB;
+            background-image: linear-gradient(180deg, #87CEEB 10%;
+            background-size: cover;
+          }
+        `}
+      </style>
       <div id="wrapper">
         <ul
-          className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion"
+          className="navbar-nav custom-sidebar sidebar sidebar-dark accordion"
           id="accordionSidebar"
         >
           <a
             className="sidebar-brand d-flex align-items-center justify-content-center"
             href="index.html"
           >
-            <div className="sidebar-brand-icon rotate-n-15">
-              <i className="fas fa-laugh-wink"></i>
-            </div>
             <div className="sidebar-brand-text mx-3">
               SNEAKER <sup></sup>
             </div>
@@ -71,13 +81,6 @@ function AdminHeader() {
               <span>Bảng điều khiển</span>
             </a>
           </li>
-
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/userManagement">
-              <i className="fas fa-fw fa-table"></i>
-              <span>Quản lý người dùng</span>
-            </a>
-          </li> */}
           <li className="nav-item">
             <a className="nav-link" href="/productManagement">
               <i className="fas fa-fw fa-table"></i>
@@ -90,13 +93,6 @@ function AdminHeader() {
               <span>Quản lý đơn hàng</span>
             </a>
           </li>
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/revenueManagement">
-              <i className="fas fa-fw fa-chart-area"></i>
-              <span>Biểu đồ doanh thu</span>
-            </a>
-          </li> */}
-
           <hr className="sidebar-divider d-none d-md-block" />
 
           <div className="text-center d-none d-md-inline">
@@ -172,139 +168,7 @@ function AdminHeader() {
                   </div>
                 </li>
 
-                <li className="nav-item dropdown no-arrow mx-1">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="alertsDropdown"
-                    role="button"
-                    onClick={toggleDropdown1}
-                    aria-haspopup="true"
-                    aria-expanded={showDropdown1 ? "true" : "false"}
-                  >
-                    <i className="fas fa-bell fa-fw"></i>
-
-                    <span className="badge badge-danger badge-counter">3+</span>
-                  </a>
-
-                  <div
-                    className={`dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ${
-                      showDropdown1 ? "show" : ""
-                    }`}
-                    aria-labelledby="alertsDropdown"
-                  >
-                    <h6 className="dropdown-header">Thông báo</h6>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      href="#"
-                    >
-                      <div className="mr-3">
-                        <div className="icon-circle bg-primary">
-                          <i className="fas fa-file-alt text-white"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="small text-gray-500">
-                          December 12, 2019
-                        </div>
-                        <span className="font-weight-bold">
-                          Báo cáo hàng tháng mới đã sẵn sàng để tải xuống!
-                        </span>
-                      </div>
-                    </a>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      href="#"
-                    >
-                      <div className="mr-3">
-                        <div className="icon-circle bg-success">
-                          <i className="fas fa-donate text-white"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="small text-gray-500">
-                          December 7, 2019
-                        </div>
-                        290,290,000 đã được gửi vào tài khoản của bạn!
-                      </div>
-                    </a>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      href="#"
-                    >
-                      <div className="mr-3">
-                        <div className="icon-circle bg-warning">
-                          <i className="fas fa-exclamation-triangle text-white"></i>
-                        </div>
-                      </div>
-                      <div>
-                        <div className="small text-gray-500">
-                          December 2, 2019
-                        </div>
-                        Cảnh báo chi tiêu: Chúng tôi nhận thấy mức chi tiêu cao bất thường
-                        cho tài khoản của bạn.
-                      </div>
-                    </a>
-                    <a
-                      className="dropdown-item text-center small text-gray-500"
-                      href="#"
-                    >
-                      Hiển thị tất cả
-                    </a>
-                  </div>
-                </li>
-
                 <div className="topbar-divider d-none d-sm-block"></div>
-
-                <li className="nav-item dropdown no-arrow">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    id="alertsDropdown"
-                    role="button"
-                    onClick={toggleDropdown}
-                    aria-haspopup="true"
-                    aria-expanded={showDropdown ? "true" : "false"}
-                  >
-                    <span className="mr-2 d-none d-lg-inline text-gray-600 small">
-                      Sneaker
-                    </span>
-                    <img
-                      className="img-profile rounded-circle"
-                      src="logo.jpg"
-                    />
-                  </a>
-
-                  <div
-                    className={`dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in ${
-                      showDropdown ? "show" : ""
-                    }`}
-                    aria-labelledby="alertsDropdown"
-                  >
-                    <a className="dropdown-item" href="#">
-                      <i className="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Trang cá nhân
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Cài đặt
-                    </a>
-                    <a className="dropdown-item" href="#">
-                      <i className="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Đăng nhập
-                    </a>
-                    <div className="dropdown-divider"></div>
-                    <a
-                      className="dropdown-item"
-                      href="#"
-                      data-toggle="modal"
-                      data-target="#logoutModal"
-                    >
-                      <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Đăng xuất
-                    </a>
-                  </div>
-                </li>
               </ul>
             </nav>
 
@@ -330,7 +194,7 @@ function AdminHeader() {
                             Doanh thu hàng tháng
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            ${information.danhSoHangThang}
+                            {information.danhSoHangThang}
                           </div>
                         </div>
                       </div>
@@ -385,10 +249,10 @@ function AdminHeader() {
                       <div className="row no-gutters align-items-center">
                         <div className="col mr-2">
                           <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">
-                            Tổng doanh thu
+                            Tổng doanh thu đã bán trong tháng
                           </div>
                           <div className="h5 mb-0 font-weight-bold text-gray-800">
-                            ${information.tongDoanhSo}
+                            {information.doanhThuBanRa}
                           </div>
                         </div>
                       </div>
@@ -396,133 +260,53 @@ function AdminHeader() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div style={{ width: "50%", padding: "12px" }}>
-              <h1 style={{ fontSize: "24px", color: "#333" }}>
-                Danh sách người dùng
-              </h1>
-              <table className="table">
-                <thead>
-                  <tr>
-                    <th
-                      style={{
-                        width: "20%",
-                        fontSize: "12px",
-                        padding: "10px",
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f2f2f2",
-                      }}
-                    >
-                      Email
-                    </th>
 
-                    <th
-                      style={{
-                        width: "20%",
-                        padding: "10px",
-                        fontSize: "12px",
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f2f2f2",
-                      }}
-                    >
-                      Họ tên
-                    </th>
-                    <th
-                      style={{
-                        width: "17%",
-                        fontSize: "12px",
-                        padding: "10px",
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f2f2f2",
-                      }}
-                    >
-                      Số điện thoại
-                    </th>
-                    <th
-                      style={{
-                        width: "30%",
-                        padding: "10px",
-                        fontSize: "12px",
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f2f2f2",
-                      }}
-                    >
-                      Địa chỉ
-                    </th>
-
-                    <th
-                      style={{
-                        width: "13%",
-                        fontSize: "12px",
-                        padding: "10px",
-                        border: "1px solid #ddd",
-                        backgroundColor: "#f2f2f2",
-                      }}
-                    >
-                      Ngày tạo
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {users.map((user) => (
-                    <tr key={user.id_user}>
-                      <td
-                        style={{
-                          width: "13%",
-                          fontSize: "10px",
-                          padding: "10px",
-                        }}
-                      >
-                        {user.username}
-                      </td>
-                      <td
-                        style={{
-                          width: "13%",
-                          fontSize: "10px",
-                          padding: "10px",
-                        }}
-                      >
-                        {user.last_name} {user.first_name}{" "}
-                      </td>
-                      <td
-                        style={{
-                          width: "13%",
-                          fontSize: "10px",
-                          padding: "10px",
-                        }}
-                      >
-                        {user.phone}
-                      </td>
-                      <td
-                        style={{
-                          width: "13%",
-                          fontSize: "10px",
-                          padding: "10px",
-                        }}
-                      >
-                        {user.address}
-                      </td>
-                      <td
-                        style={{
-                          width: "13%",
-                          fontSize: "10px",
-                          padding: "10px",
-                        }}
-                      >
-                        {user.createDate}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+              <div className="row">
+                <div className="col-lg-6 mb-4">
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                      <h6 className="m-0 font-weight-bold text-primary">
+                        Tổng số người dùng
+                      </h6>
+                    </div>
+                    <div className="card-body">
+                      <h4 className="small font-weight-bold">
+                        Số người dùng hiện tại{" "}
+                        <span className="float-right">{users.totalUsers}</span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+                <div className="col-lg-6 mb-4">
+                  <div className="card shadow mb-4">
+                    <div className="card-header py-3">
+                      <h6 className="m-0 font-weight-bold text-primary">
+                        Tổng số đơn hàng
+                      </h6>
+                    </div>
+                    <div className="card-body">
+                      <h4 className="small font-weight-bold">
+                        Tổng số đơn hàng{" "}
+                        <span className="float-right">
+                          {information.totalOrders}
+                        </span>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          {/* <footer className="sticky-footer bg-white">
+            <div className="container my-auto">
+              <div className="copyright text-center my-auto">
+                <span>Copyright &copy; Your Website 2021</span>
+              </div>
+            </div>
+          </footer> */}
         </div>
       </div>
-
-      <a className="scroll-to-top rounded" href="#page-top">
-        <i className="fas fa-angle-up"></i>
-      </a>
     </div>
   );
 }

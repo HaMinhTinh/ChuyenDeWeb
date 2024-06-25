@@ -41,7 +41,7 @@ public class ConfirmOrderController {
     public ResponseEntity<String> confirmOrder(@RequestBody OrderRequest request) {
         try {
             orderDao.insert(request);
-            return new ResponseEntity<>("Order confirmed successfully", HttpStatus.OK);
+            return new ResponseEntity<>("Đơn hàng được xác nhận thành công", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error confirming order: " + e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
         }

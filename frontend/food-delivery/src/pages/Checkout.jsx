@@ -434,7 +434,7 @@ const Checkout = () => {
                     VNPay
                   </label>
                 </div>
-                <div className="custom-control custom-radio">
+                {/* <div className="custom-control custom-radio">
                   <input
                       id="paypal"
                       name="paymentMethod"
@@ -448,7 +448,7 @@ const Checkout = () => {
                   <label className="custom-control-label" htmlFor="paypal">
                     Momo
                   </label>
-                </div>
+                </div> */}
               </div>
               <hr className="mb-4" />
               <button

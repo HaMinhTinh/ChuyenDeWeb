@@ -51,7 +51,7 @@ public class HistoryDao {
                 "JOIN orderitems od ON o.ID = od.OrderID " +
                 "JOIN products p ON p.id = od.ProductID " +
                 "JOIN customer c ON c.id_user = o.UserID " +
-                "WHERE c.id_user = ?";
+                "WHERE od.OrderId = ?";
 
         List<History> historyList = new ArrayList<>();
 
@@ -65,8 +65,8 @@ public class HistoryDao {
                     int orderId = resultSet.getInt("OrderID");
                     String name = resultSet.getString("name");
                     String url = resultSet.getString("url");
-                    String date = resultSet.getString("CreationDate");
-                    String status = resultSet.getString("OrderStatus");
+                    String date = resultSet.getString("date");
+                    String status = resultSet.getString("status");
                     int quantity = resultSet.getInt("Quantity");
                     double price = resultSet.getDouble("Price");
 
@@ -83,7 +83,7 @@ public class HistoryDao {
     }
 
     public boolean updateHistoryById(int orderId) throws SQLException {
-        String query = "UPDATE orders SET OrderStatus = 'Đã hủy' WHERE OrderID = ?";
+        String query = "UPDATE orders SET OrderStatus = 'Đã hủy' WHERE ID = ?";
 
         try (Connection connection = DatabaseConnectionTest.getConnection();
              PreparedStatement ps = connection.prepareStatement(query)) {
